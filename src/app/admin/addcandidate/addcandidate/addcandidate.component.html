@@ -1,0 +1,85 @@
+
+<div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutAlign="space-around stretch">
+  <mat-card fxFlex.gt-xs="40" class="mb15">
+    <mat-card-header>
+      <mat-card-title>Basic Information</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="">
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="First Name" required="true">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Last Name" required="true">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="CIN" required="true">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Passport ID">
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card fxFlex.gt-xs="40" class="mb15">
+    <mat-card-header>
+      <mat-card-title>Contact Information</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="">
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Email" [formControl]="emailFormControl" [errorStateMatcher]="matcher" required="true">
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Phone Number" [formControl]="phoneFormControl" [errorStateMatcher]="matcher" required="true">
+          <mat-error *ngIf="phoneFormControl.hasError('pattern') && !phoneFormControl.hasError('required')">
+            Please enter a valid phone number
+          </mat-error>
+          <mat-error *ngIf="phoneFormControl.hasError('required')">
+            Phone number is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Address">
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card fxFlex.gt-xs="40" class="mb15 work-exp-card">
+    <mat-card-header>
+      <mat-card-title>Work Experience</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="">
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-select placeholder="Profile">
+            <mat-option value="option">FullStack</mat-option>
+            <mat-option value="option">SalesForce</mat-option>
+            <mat-option value="option">Testing</mat-option>
+            <mat-option value="option">Other</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="example-form">
+          <input matInput type="number" min="0" placeholder="Years of experience">
+        </mat-form-field>
+        <mat-form-field class="example-form">
+          <input matInput [matDatepicker]="picker" placeholder="Received date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <div style="margin-top: auto; margin-bottom: 10%;">
+    <button mat-raised-button color="primary">Add Candidate</button>
+  </div>
+</div>
