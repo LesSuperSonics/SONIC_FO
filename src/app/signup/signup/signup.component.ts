@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../_services/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -7,15 +8,35 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-  constructor(private router: Router) {}
+  form: any = {
+    firstName: null,
+    lastName: null,
+    email: null,
+    password: null
+  };
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMessage = '';
+  constructor(private router: Router,private authService: AuthService) {}
 
-  ngOnInit() {}
-  onSignup() {
-  /*  localStorage.setItem('isSignedUp', 'true');
-    localStorage.setItem('isLoggedin', 'true');
-    console.log("on onSignup()")
-    this.router.navigate(['/dashboard']);
-    */
+  ngOnInit(): void {
+  }
+
+  onSubmit(): void {
+    const { firstName,lastName, email, password } = this.form;
+
+    this.authService.register(firstName,lastName, email, password).subscribe(
+      data => {
+        console.log(data);
+        this.isSuccessful = true;
+        this.isSignUpFailed = false;
+        this.router.navigate(['/login']);
+      },
+      err => {
+        this.errorMessage = err.error.message;
+        this.isSignUpFailed = true;
+      }
+    );
   }
   onLogin(){
     this.router.navigate(['/login']);
