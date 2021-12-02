@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { childRoutes } from './child-routes';
+import { AdminModule } from './admin.module';
+import { HomeComponent } from './dashboard/home/home.component';
 
 
 const routes: Routes = [

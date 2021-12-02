@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { UserService } from '../../../_services/user.service';
 interface Place {
   imgSrc: string;
   name: string;
@@ -15,8 +15,17 @@ interface Place {
 })
 export class HomeComponent implements OnInit {
   places: Array<Place> = [];
-  constructor() {}
+  content?: string;
+  constructor(private userService: UserService) {}
   ngOnInit() {
+    this.userService.getAdminBoard().subscribe(
+      data => {
+        this.content = data;
+      },
+      err => {
+        this.content = JSON.parse(err.error).message;
+      }
+    );
     this.places = [
       {
         imgSrc: 'assets/images/card-1.jpg',

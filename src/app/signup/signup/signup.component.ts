@@ -11,10 +11,11 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {}
   onSignup() {
-    localStorage.setItem('isSignedUp', 'true');
+  /*  localStorage.setItem('isSignedUp', 'true');
     localStorage.setItem('isLoggedin', 'true');
     console.log("on onSignup()")
     this.router.navigate(['/dashboard']);
+    */
   }
   onLogin(){
     this.router.navigate(['/login']);

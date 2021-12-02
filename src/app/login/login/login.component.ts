@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../_services/auth.service';
+import { TokenStorageService } from '../../_services/token-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -7,13 +9,53 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  constructor(private router: Router) {}
 
-  ngOnInit() {}
-  onLogin() {
-    localStorage.setItem('isLoggedin', 'true');
-    this.router.navigate(['/dashboard']);
+  form: any = {
+    email: null,
+    password: null
+  };
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage = '';
+  roles: string[] = [];
+
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService,private router: Router) { }
+
+  ngOnInit(): void {
+    if (this.tokenStorage.getToken()) {
+      this.isLoggedIn = true;
+      localStorage.setItem('isLoggedin', 'true');
+      this.router.navigate(['/dashboard']);
+      console.log("on init inside");
+    }
   }
+
+  onSubmit(): void {
+    const { email, password } = this.form;
+    console.log("on submit outside");
+    this.authService.login(email, password).subscribe(
+      data => {
+        this.tokenStorage.saveToken(data.accessToken);
+        this.tokenStorage.saveUser(data);
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+        this.roles = this.tokenStorage.getUser().roles;
+        localStorage.setItem('isLoggedin', 'true');
+        this.router.navigate(['/dashboard']);
+        console.log("on submit inside");
+        this.reloadPage();
+      },
+      err => {
+        this.errorMessage = err.error.message;
+        this.isLoginFailed = true;
+      }
+    );
+  }
+
+  reloadPage(): void {
+    window.location.reload();
+  }
+
   onSignup(){
     this.router.navigate(['/signup']);
   }
