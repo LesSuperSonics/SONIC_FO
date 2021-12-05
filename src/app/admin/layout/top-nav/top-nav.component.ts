@@ -18,7 +18,7 @@ export class TopNavComponent implements OnInit {
     this.sideNavToggled.emit();
   }
 
- 
+ // logout function
   logout(): void {
     localStorage.removeItem('isLoggedin');
     this.tokenStorageService.signOut();
