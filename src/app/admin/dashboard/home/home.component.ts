@@ -18,14 +18,15 @@ export class HomeComponent implements OnInit {
   content?: string;
   constructor(private userService: UserService) {}
   ngOnInit() {
-    this.userService.getAdminBoard().subscribe(
+    // give access to the scope with authorized resource to use later with users roles 
+    /*this.userService.getAdminBoard().subscribe(
       data => {
         this.content = data;
       },
       err => {
         this.content = JSON.parse(err.error).message;
       }
-    );
+    );*/
     this.places = [
       {
         imgSrc: 'assets/images/card-1.jpg',
