@@ -11,13 +11,16 @@
   color: #fff;
   .mat-card-header {
     width: 100%;
+    
   }
   .mat-card-title {
     font-size: 40px !important;
   }
   .mat-card-subtitle {
-    color: #fff;
+    color: rgb(255, 255, 255);
     white-space: nowrap;
+    font-size: 20px;
+    
   }
   &.danger {
     background: linear-gradient(60deg, #ec407a, #d81b60);
@@ -27,6 +30,18 @@
   }
   &.success {
     background: linear-gradient(60deg, #66bb6a, #43a047);
+  }
+  &.red {
+    background: linear-gradient(60deg, #ff0000, #ff0000);
+  }
+  &.capBleue {
+    background: linear-gradient(60deg, #07226d, #07226d);
+  }
+  &.capLightBleue {
+    background: linear-gradient(60deg, #2caec5, #2caec5);
+  }
+  &.capGrey {
+    background: linear-gradient(60deg, #737978, #737978);
   }
   &.info {
     background: linear-gradient(60deg, #26c6da, #00acc1);
