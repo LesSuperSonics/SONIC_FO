@@ -4,11 +4,8 @@
         <mat-card-title>Search for a candidate</mat-card-title>
       </mat-card-header>
         <mat-card-content>
-            <mat-checkbox>First Name</mat-checkbox>
-            <mat-checkbox>Last Name</mat-checkbox>
-            <mat-checkbox>Age</mat-checkbox>
-            <mat-checkbox>Profile</mat-checkbox>
-            <mat-checkbox>Work Experience</mat-checkbox>
+            <mat-checkbox 
+            #someInput id="elem{{i}}"  *ngFor="let a of arr1;let i=index"  (change)="onCheckboxChecked($event, a)" >{{a}}</mat-checkbox>
         </mat-card-content>
         <mat-card-content align="end">
             <mat-form-field  appearance="legacy">
