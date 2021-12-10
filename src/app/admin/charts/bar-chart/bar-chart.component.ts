@@ -22,8 +22,9 @@ export class BarChartComponent implements OnInit {
   barChartType = 'bar';
   barChartLegend = true;
   barChartData: any[] = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
-    { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' }
+    { data: [65, 59, 80, 81, 56, 55, 40], label: 'FullStack' },
+    { data: [100, 25, 78, 33, 86, 12, 43], label: 'Testing' },
+    { data: [28, 48, 40, 19, 86, 27, 90], label: 'SalesForce' }
   ];
   constructor() {}
 
