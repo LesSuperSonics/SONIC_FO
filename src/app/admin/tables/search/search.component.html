@@ -7,15 +7,15 @@
         </mat-expansion-panel-header>
         <div>
             <mat-checkbox class="mat-checkbox" [formControl]="disableFirstNameSelect">First Name</mat-checkbox>
-            <mat-form-field class="search" appearance="legacy">
+            <mat-form-field class="search" appearance="legacy" >
                 <mat-label>Search</mat-label>
-                <input matInput placeholder="" [disabled]="!disableFirstNameSelect.value">
+                <input matInput placeholder="" [disabled]="!disableFirstNameSelect.value" [(ngModel)]="form.firstName">
                 <mat-icon matSuffix *ngIf="disableFirstNameSelect.value">search</mat-icon>
             </mat-form-field>
             <mat-checkbox class="mat-checkbox" [formControl]="disableLastNameSelect">Last Name</mat-checkbox>
             <mat-form-field class="search" appearance="legacy">
                 <mat-label>Search</mat-label>
-                <input matInput placeholder="" [disabled]="!disableLastNameSelect.value">
+                <input matInput placeholder="" [disabled]="!disableLastNameSelect.value" [(ngModel)]="form.lastName">
                 <mat-icon matSuffix *ngIf="disableLastNameSelect.value">search</mat-icon>
             </mat-form-field>
         </div>
@@ -24,15 +24,15 @@
         </div>
         <div>
             <mat-checkbox class="mat-checkbox" [formControl]="disablePhoneNumberSelect">Phone Number</mat-checkbox>
-            <mat-form-field class="search" appearance="legacy">
+            <mat-form-field class="search" appearance="legacy" >
                 <mat-label>Search</mat-label>
-                <input matInput placeholder="" [disabled]="!disablePhoneNumberSelect.value">
+                <input matInput placeholder="" [disabled]="!disablePhoneNumberSelect.value" [(ngModel)]="form.phoneNumber">
                 <mat-icon matSuffix *ngIf="disablePhoneNumberSelect.value">search</mat-icon>
             </mat-form-field>
             <mat-checkbox class="mat-checkbox" [formControl]="disableEmailSelect">Email</mat-checkbox>
-            <mat-form-field class="search" appearance="legacy">
+            <mat-form-field class="search" appearance="legacy" >
                 <mat-label>Search</mat-label>
-                <input matInput placeholder="" [disabled]="!disableEmailSelect.value">
+                <input matInput placeholder="" [disabled]="!disableEmailSelect.value" [(ngModel)]="form.email">
                 <mat-icon matSuffix *ngIf="disableEmailSelect.value">search</mat-icon>
             </mat-form-field>
         </div>
@@ -40,19 +40,19 @@
             <mat-checkbox class="mat-checkbox" [formControl]="disableExpSelect">Years of experience</mat-checkbox>
             <mat-form-field class="search">
                 <input matInput type="number" min="0" placeholder="Years of experience"
-                    [disabled]="!disableExpSelect.value">
+                    [disabled]="!disableExpSelect.value"  [(ngModel)]="form.exp">
             </mat-form-field>
             <mat-checkbox class="mat-checkbox" [formControl]="disableStatusSelect">Status</mat-checkbox>
             <mat-form-field class="search">
-                <mat-select placeholder="Status" [disabled]="!disableStatusSelect.value">
-                    <mat-option value="option">Accepted</mat-option>
-                    <mat-option value="option">Current</mat-option>
-                    <mat-option value="option">Rejected</mat-option>
+                <mat-select placeholder="Status" [disabled]="!disableStatusSelect.value"  [(ngModel)]="form.status">
+                    <mat-option value="ACCEPTED">Accepted</mat-option>
+                    <mat-option value="CURRENT">Current</mat-option>
+                    <mat-option value="REJECTED">Rejected</mat-option>
                 </mat-select>
             </mat-form-field>
         </div>
         <mat-action-row>
-            <button mat-button color="primary" >Search</button>
+            <button mat-button color="primary" (click)="onSearch()">Search</button>
           </mat-action-row>
     </mat-expansion-panel>
 </div>
