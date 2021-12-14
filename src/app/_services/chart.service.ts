@@ -5,6 +5,8 @@ import { TokenStorageService } from './token-storage.service';
 import { environment } from 'src/environments/environment';
 
 let BarChartFullstackByYears = "FullStackByYearsBarChart";
+let BarChartSalesForceByYears = "SalesForceByYearsBarChart";
+let BarChartTestingByYears = "TestingByYearsBarChart";
 let SubRootUrl = "/candidates/"
 @Injectable({
     providedIn: 'root'
@@ -18,7 +20,13 @@ export class ChartService {
             'Authorization': 'Bearer ' + this.tokenStorageService.getToken()
         })
     };
-    BarChatFullStackByYearsCall(): Observable<any> {
+    BarChartFullStackByYearsCall(): Observable<any> {
         return this.http.get(`${environment.apiUrl}`+SubRootUrl+BarChartFullstackByYears, this.httpOptions);
+    }
+    BarChartSalesForceByYearsCall(): Observable<any> {
+        return this.http.get(`${environment.apiUrl}`+SubRootUrl+BarChartSalesForceByYears, this.httpOptions);
+    }
+    BarChartTestingByYearsCall(): Observable<any> {
+        return this.http.get(`${environment.apiUrl}`+SubRootUrl+BarChartTestingByYears, this.httpOptions);
     }
 }

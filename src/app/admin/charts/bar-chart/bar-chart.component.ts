@@ -7,6 +7,9 @@ import { TokenStorageService } from "src/app/_services/token-storage.service";
   styleUrls: ['./bar-chart.component.scss']
 })
 export class BarChartComponent implements OnInit {
+  FullStackResult: any;
+  SalesForceResult: any;
+  TestingResult: any;
   barChartOptions: any = {
     scaleShowVerticalLines: false,
     responsive: true
@@ -30,7 +33,9 @@ export class BarChartComponent implements OnInit {
   constructor(private chartService:ChartService) {}
 
   ngOnInit() {
-    this.onBarChatFullStackByYearsCall();
+    this.onBarChartFullStackByYearsCall();
+    this.onBarChartSalesForceByYearsCall();
+    this.onBarChartTestingByYearsCall();
   }
 
   chartClicked(e: any): void {
@@ -42,15 +47,49 @@ export class BarChartComponent implements OnInit {
     console.log(e);
   }
 
-  onBarChatFullStackByYearsCall() {
-      this.chartService.BarChatFullStackByYearsCall().subscribe(
+  onBarChartFullStackByYearsCall() {
+      this.chartService.BarChartFullStackByYearsCall().subscribe(
         data => {
-          console.log(JSON.stringify(data));
+         this.FullStackResult= JSON.parse(JSON.stringify(data));
+          //console.log(JSON.stringify(data));
         },
         err => {
           console.log("error");
         }
       );
     }
+
+    onBarChartSalesForceByYearsCall() {
+      this.chartService.BarChartSalesForceByYearsCall().subscribe(
+        data => {
+          return JSON.parse(JSON.stringify(data));
+          //console.log(JSON.stringify(data));
+        },
+        err => {
+          console.log("error");
+        }
+      );
+    }
+    onBarChartTestingByYearsCall() {
+      this.chartService.BarChartTestingByYearsCall().subscribe(
+        data => {
+          return JSON.parse(JSON.stringify(data));
+          //console.log(JSON.stringify(data));
+        },
+        err => {
+          console.log("error");
+        }
+      );
+    }
+/*
+    this.FullStackResult.forEach(element => {
+      console.log(element[0]);
+    });
+    
+*/
+    
+     
+     
+    
   
 }
