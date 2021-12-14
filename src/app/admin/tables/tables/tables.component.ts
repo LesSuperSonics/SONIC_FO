@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./tables.component.scss']
 })
 export class TablesComponent implements OnInit, AfterViewInit {
-  displayedColumns = ['select', 'id', 'name', 'progress', 'color'];
+  displayedColumns = ['id', 'First Name', 'Last Name', 'Status'];
   dataSource: MatTableDataSource<UserData>;
   selection: SelectionModel<UserData>;
 
@@ -38,6 +38,7 @@ export class TablesComponent implements OnInit, AfterViewInit {
   }
 
   /** Whether the number of selected elements matches the total number of rows. */
+  
   isAllSelected() {
     const numSelected = this.selection.selected.length;
     const numRows = this.dataSource.data.length;
@@ -50,6 +51,7 @@ export class TablesComponent implements OnInit, AfterViewInit {
       ? this.selection.clear()
       : this.dataSource.data.forEach(row => this.selection.select(row));
   }
+ 
 
   onAddCandidate(){
     this.router.navigate(['/addcandidate']);

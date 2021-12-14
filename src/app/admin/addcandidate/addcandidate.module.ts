@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FormsModule as FormModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -16,6 +16,9 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatChipsModule } from '@angular/material/chips';
+
 import { AddCandidateRoutingModule } from './addcandidate-routing.module';
 import { AddCandidateComponent } from './addcandidate/addcandidate.component';
 import { MatButtonModule } from '@angular/material/button';
@@ -24,11 +27,13 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [
     SharedModule,
     AddCandidateRoutingModule,
+    MatSidenavModule,
     FormModule,
     ReactiveFormsModule,
     FlexLayoutModule,
     MatTabsModule,
     MatAutocompleteModule,
+    MatChipsModule,
     MatSlideToggleModule,
     MatFormFieldModule,
     MatInputModule,
@@ -45,6 +50,7 @@ import { MatButtonModule } from '@angular/material/button';
   ],
   declarations: [
     AddCandidateComponent
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AddCandidateModule {}
