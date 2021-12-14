@@ -31,42 +31,28 @@ export class SearchComponent implements OnInit {
   }
 
   onSearch() {
-    //this.disableFirstNameSelect.setValue(false);
-    const query= this.getQuery();
-    if(query!=""){
-      this.searchService.search(query).subscribe(
-        data => {
-          console.log(JSON.stringify(data));
-        },
-        err => {
-          //this.errorMessage = err.error.message;
-          //this.isSignUpFailed = true;
-          console.log("error");
-        }
-      );
-    }
+    this.searchService.sendQueryToTable(this.getQuery());
   }
-  getQuery():string{
+  getQuery(): string {
     var query = "";
     if (this.disableFirstNameSelect.value && !(this.form.firstName == null) && !(this.form.firstName == "")) {
-      query+="firstName:"+this.form.firstName+" AND ";
+      query += "firstName:" + this.form.firstName + " AND ";
     }
     if (this.disableLastNameSelect.value && !(this.form.lastName == null) && !(this.form.lastName == "")) {
-      query+="lastName:"+this.form.lastName+" AND ";
+      query += "lastName:" + this.form.lastName + " AND ";
     }
     if (this.disableEmailSelect.value && !(this.form.email == null) && !(this.form.email == "")) {
-      query+="email:"+this.form.email+" AND ";
+      query += "email:" + this.form.email + " AND ";
     }
     if (this.disablePhoneNumberSelect.value && !(this.form.phoneNumber == null) && !(this.form.phoneNumber == "")) {
-      query+="phoneNumber:"+this.form.phoneNumber+" AND ";
+      query += "phoneNumber:" + this.form.phoneNumber + " AND ";
     }
     if (this.disableExpSelect.value && !(this.form.exp == null)) {
-      query+="expDuration:"+this.form.exp+" AND ";
+      query += "expDuration:" + this.form.exp + " AND ";
     }
     /*if (this.disableStatusSelect.value && !(this.form.status == null)) {
       query+="status:"+this.form.status+" AND ";
     }*/ // enum issue
-    console.log("query: "+query);
     return query;
   }
 }

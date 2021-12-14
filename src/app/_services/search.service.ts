@@ -12,7 +12,6 @@ const SEARCH_API = 'http://localhost:8080/api/candidates?search=';
 })
 export class SearchService {
     constructor(private http: HttpClient, private tokenStorageService: TokenStorageService) { }
-
     httpOptions = {
         headers: new HttpHeaders({
             'Content-Type': 'application/json',
@@ -20,7 +19,14 @@ export class SearchService {
         })
     };
     search(query: string): Observable<any> {
-        console.log("in search service with httpOptions: "+ JSON.stringify(this.httpOptions));
         return this.http.get(SEARCH_API + query, this.httpOptions);
+    }
+
+    sendQueryToTable(query: string) {
+        this.sendQuery(query);
+    }
+    private sendQuery: (query: string) => void;
+    onQueryReceived(fn: (query: string) => void) {
+        this.sendQuery = fn;
     }
 }
