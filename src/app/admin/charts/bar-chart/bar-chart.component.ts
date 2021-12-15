@@ -33,9 +33,6 @@ export class BarChartComponent implements OnInit {
   constructor(private chartService:ChartService) {}
 
   ngOnInit() {
-    this.onBarChartFullStackByYearsCall();
-    this.onBarChartSalesForceByYearsCall();
-    this.onBarChartTestingByYearsCall();
   }
 
   chartClicked(e: any): void {
