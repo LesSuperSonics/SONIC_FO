@@ -11,6 +11,7 @@ import { SharedModule } from './shared/shared.module';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     SharedModule
    
   ],
-  providers: [authInterceptorProviders, {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],
+  providers: [authInterceptorProviders, DatePipe, {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

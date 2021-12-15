@@ -11,7 +11,7 @@ export class Candidate{
       address : String;
       expDuration : number;
       profile : String;
-      receivedDate : Date;
+      receivedDate : string;
       createdDate? : Date;
       status? : String;
       user? : Object;

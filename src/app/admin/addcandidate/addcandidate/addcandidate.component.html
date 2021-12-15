@@ -51,9 +51,14 @@
           <input formControlName="expDuration" matInput type="number" min="0" placeholder="Years of experience">
         </mat-form-field>
         
-        <mat-form-field class="example-full-width">
-          <input formControlName="receivedDate" matInput placeholder="receivedDate" required="true">
+
+        <mat-form-field class="example-form">
+          <input formControlName="receivedDate" matInput [matDatepicker]="picker" placeholder="Received date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
+        
+       
 
        
         <div style="margin-top: auto; margin-bottom: 10%;">

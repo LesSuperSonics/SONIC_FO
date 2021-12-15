@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { DatePipe } from '@angular/common';
 import {
   FormBuilder,
   FormControl,
@@ -49,7 +50,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class AddCandidateComponent implements OnInit {
 
-  constructor(private router: Router, private candidatService : CandidateService,  private formBuilder : FormBuilder) {}
+  constructor(private datePipe : DatePipe, private router: Router, private candidatService : CandidateService,  private formBuilder : FormBuilder) {}
 
   emailFormControl = new FormControl('', [
     Validators.required,
@@ -93,8 +94,9 @@ export class AddCandidateComponent implements OnInit {
     this.candidate.address = this.candidateForm.value.address;
     this.candidate.expDuration = this.candidateForm.value.expDuration;
     this.candidate.profile = this.candidateForm.value.profile;
-    this.candidate.receivedDate = this.candidateForm.value.receivedDate;
+    this.candidate.receivedDate = this.convert(this.candidateForm.value.receivedDate)  ;
 
+    console.log(this.candidate.receivedDate +" "+this.candidate.email);
     this.candidatService.addCandidate(this.candidate)
     .subscribe((res : Candidate) => {
       console.log(res);
@@ -106,6 +108,12 @@ export class AddCandidateComponent implements OnInit {
     })
   }
 
+   convert(str) {
+    var date = new Date(str),
+      mnth = ("0" + (date.getMonth() + 1)).slice(-2),
+      day = ("0" + date.getDate()).slice(-2);
+    return [day, mnth,date.getFullYear()].join("/");
+  }
   /*
   constructor(private candidatService : CandidateService) {}
    candidates : Candidate[];
