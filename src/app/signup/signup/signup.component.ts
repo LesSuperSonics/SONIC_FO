@@ -17,6 +17,7 @@ export class SignupComponent implements OnInit {
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
+   
   constructor(private router: Router,private authService: AuthService) {}
 
   ngOnInit(): void {

@@ -17,12 +17,11 @@ const ALL = "";
   styleUrls: ['./tables.component.scss']
 })
 export class TablesComponent implements OnInit, AfterViewInit {
+
   displayedColumns = ['cin', 'firstName', 'lastName', 'email', 'phoneNumber', 'expDuration', 'profile', 'status'];
   dataSource: MatTableDataSource<CandidateData>;
   selection: SelectionModel<CandidateData>;
   subscription: Subscription;
-
-
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -53,6 +52,7 @@ export class TablesComponent implements OnInit, AfterViewInit {
       this.dataSource.paginator.firstPage();
     }
   }
+
   performSearch(query: string) {
     this.searchService.search(query).subscribe(
       data => {

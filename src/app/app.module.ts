@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +10,9 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { DatePipe } from '@angular/common';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,9 +23,11 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     HttpClientModule,
     CoreModule,
     FormsModule,
+    ReactiveFormsModule,
     SharedModule
+   
   ],
-  providers: [authInterceptorProviders],
+  providers: [authInterceptorProviders, DatePipe, {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
