@@ -2,17 +2,13 @@ import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { CandidateData, DataService } from '../data.service';
+import { CandidateData, DataService } from 'src/app/_services/data.service';
 import { SelectionModel } from '@angular/cdk/collections';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SearchService } from 'src/app/_services/search.service';
+import { Subscription } from 'rxjs';
 
-const FULLSTACKS = "/findFullStacks";
-const TESTING = "/findTestings";
-const SALESFORCE = "/findSalesForces";
-const STATUS_CURRENT = "/findByStatus/CURRENT";
-const STATUS_ACCEPTED = "/findByStatus/ACCEPTED";
-const STATUS_REJECTED = "/findByStatus/REJECTED";
+
 const ALL = "";
 
 @Component({
@@ -24,23 +20,28 @@ export class TablesComponent implements OnInit, AfterViewInit {
   displayedColumns = ['cin', 'firstName', 'lastName', 'email', 'phoneNumber', 'expDuration', 'profile', 'status'];
   dataSource: MatTableDataSource<CandidateData>;
   selection: SelectionModel<CandidateData>;
+  subscription: Subscription;
+
+
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
-  constructor(private readonly dataService: DataService, private router: Router, private searchService: SearchService) { }
+  constructor(private route: ActivatedRoute, private readonly dataService: DataService, private router: Router, private searchService: SearchService) { }
 
   ngOnInit() {
     this.searchService.onQueryReceived(this.performSearch.bind(this));
-    this.dataService.getCandidatesBy(this.dataService.param).subscribe(
-      data => {
-        this.fillTable(data);
-      },
-      err => {
-        //this.errorMessage = err.error.message;
-        //this.isSignUpFailed = true;
-        console.log("error");
-      }
-    );
+
+    this.dataService.getParam().subscribe(param =>
+      this.dataService.getCandidatesBy(param).subscribe(
+        data => {
+          this.fillTable(data);
+        },
+        err => {
+          //this.errorMessage = err.error.message;
+          //this.isSignUpFailed = true;
+          console.log("error");
+        }
+      ));
   }
 
   ngAfterViewInit() {

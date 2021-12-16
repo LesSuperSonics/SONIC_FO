@@ -1,7 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { Profile } from 'src/app/models/profile';
 import { CandidateService } from 'src/app/_services/candidate.service';
+
+
 
 @Component({
   selector: 'app-stat',
@@ -16,6 +18,8 @@ export class StatComponent implements OnInit {
   @Input() count: number;
   @Input() label: string;
   @Input() data: number;
+  @Output() viewDetails = new EventEmitter<string>();
+
 
   constructor(private router : Router, private candidateService : CandidateService) {}
 
@@ -24,6 +28,10 @@ export class StatComponent implements OnInit {
   ngOnInit() {
     //this.getFullStack();
     //this.getTesting();
+  }
+
+  viewDetailsClick(){
+    this.viewDetails.emit(this.label);
   }
 
 /*

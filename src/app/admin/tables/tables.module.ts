@@ -11,7 +11,7 @@ import {MatButtonModule} from '@angular/material/button';
 
 import { TablesRoutingModule } from './tables-routing.module';
 import { TablesComponent } from './tables/tables.component';
-import { DataService } from './data.service';
+import { DataService } from 'src/app/_services/data.service';
 import { SearchComponent } from './search/search.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCardModule } from '@angular/material/card';
@@ -46,7 +46,6 @@ import { MatNativeDateModule } from '@angular/material/core';
   declarations: [
     TablesComponent,
     SearchComponent
-  ],
-  providers: [DataService]
+  ]
 })
 export class TablesModule {}
