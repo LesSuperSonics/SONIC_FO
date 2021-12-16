@@ -1,78 +1,36 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-export interface UserData {
-  id: string;
-  name: string;
-  progress: string;
-  color: string;
+import { Observable } from 'rxjs';
+import { TokenStorageService } from 'src/app/_services/token-storage.service';
+export interface CandidateData {
+  id: number;
+  cin: string;
+  passportId: string;
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+  email: string;
+  address: string;
+  expDuration: number;
+  profile: string;
+  createdDate: string;
+  status: string;
+  user: string;
+  receivedDate: string;
 }
+const GET_API = "http://localhost:8080/api/candidates";
 
 @Injectable()
 export class DataService {
-  private readonly colors = [
-    'maroon',
-    'red',
-    'orange',
-    'yellow',
-    'olive',
-    'green',
-    'purple',
-    'fuchsia',
-    'lime',
-    'teal',
-    'aqua',
-    'blue',
-    'navy',
-    'black',
-    'gray'
-  ];
-  private readonly names = [
-    'Maia',
-    'Asher',
-    'Olivia',
-    'Atticus',
-    'Amelia',
-    'Jack',
-    'Charlotte',
-    'Theodore',
-    'Isla',
-    'Oliver',
-    'Isabella',
-    'Jasper',
-    'Cora',
-    'Levi',
-    'Violet',
-    'Arthur',
-    'Mia',
-    'Thomas',
-    'Elizabeth'
-  ];
-
-  constructor() {}
-
-  createNewUser(id: number): UserData {
-    const name =
-      this.names[this.getRandomArrayIndex(this.names.length)] +
-      ' ' +
-      this.names[this.getRandomArrayIndex(this.names.length)].charAt(0) +
-      '.';
-
-    return {
-      id: id.toString(),
-      name: name,
-      progress: Math.round(Math.random() * 100).toString(),
-      color: this.colors[this.getRandomArrayIndex(this.colors.length)]
-    };
-  }
-
-  create100Users(): UserData[] {
-    const users: UserData[] = [];
-    for (let i = 1; i <= 100; i++) {
-      users.push(this.createNewUser(i));
-    }
-    return users;
-  }
-
-  private getRandomArrayIndex(length: number): number {
-    return Math.round(Math.random() * (length - 1));
+  param = ""; // this param will be modified from Dashboard to show corresponding data on table
+  constructor(private http: HttpClient, private tokenStorageService: TokenStorageService) { }
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.tokenStorageService.getToken()
+    })
+  };
+  getCandidatesBy(param: string): Observable<any> {
+    return this.http.get(GET_API + param, this.httpOptions);
   }
 }
