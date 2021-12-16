@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, Route } from '@angular/router';
 import { AddCandidateComponent } from './addcandidate/addcandidate.component';
 
-const routes: Routes = [
+const routes: Route[] = [
   {
     path: '',
     component: AddCandidateComponent
