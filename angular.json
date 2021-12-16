@@ -118,7 +118,13 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              {
+                "input": "./src/assets/js/scripting.js",
+                "inject": false,
+                "bundleName": "external-module"
+              }
+            ]
           }
         }
       }

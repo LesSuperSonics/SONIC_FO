@@ -1,29 +1,27 @@
-<div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-between stretch">
+<div style="margin-top: 2%;" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-between stretch">
   <div class="mb10" fxFlex="32" fxFlex.lt-lg="49">
-    <app-stat [bgClass]="'capBleue'" [icon]="'code'" [count]="13" [label]="'Full Stack'"></app-stat>
+    <app-stat  [bgClass]="'capBleue'" [icon]="'code'" [count]="countFS" [label]="labelFS"></app-stat>
   </div>
 
   <div class="mb10" fxFlex="32" fxFlex.lt-lg="49">
-    <app-stat [bgClass]="'capGrey'" [icon]="'bug_report'" [count]="12" [label]="'Testing'"></app-stat>
+    <app-stat  [bgClass]="'capGrey'" [icon]="'bug_report'" [count]="countTS" [label]="labelTS"></app-stat>
   </div>
 
   <div class="mb10" fxFlex="32" fxFlex.lt-lg="49">
-    <app-stat [bgClass]="'capLightBleue'" [icon]="'view_list'" [count]="124" [label]="'Sales Force'"></app-stat>
+    <app-stat  [bgClass]="'capLightBleue'" [icon]="'view_list'" [count]="countSF" [label]="labelSF"></app-stat>
   </div>
 </div>
 
-
-
-<div  fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-between stretch">
+<div style="margin-top: 5%;" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-between stretch">
   <div class="mb10 my-6" fxFlex="32" fxFlex.lt-lg="49">
-    <app-stat [bgClass]="'success'" [icon]="'verified_user'" [count]="12" [label]="'Accepted'"></app-stat>
+    <app-stat [bgClass]="'success'" [icon]="'verified_user'" [count]="countAC" [label]="labelAC"></app-stat>
   </div>
 
   <div class="mb10" fxFlex="32" fxFlex.lt-lg="49">
-    <app-stat [bgClass]="'warn'" [icon]="'history'" [count]="124" [label]="'Current'"></app-stat>
+    <app-stat [bgClass]="'warn'" [icon]="'history'" [count]="countCR" [label]="labelCR"></app-stat>
   </div>
 
   <div   class="mb10" fxFlex="32" fxFlex.lt-lg="49">
-    <app-stat [bgClass]="'red'" [icon]="'not_interested'" [count]="13" [label]="'Rejected'"></app-stat>
+    <app-stat [bgClass]="'red'" [icon]="'not_interested'" [count]="countRJ" [label]="labelRJ"></app-stat>
   </div>
 </div>

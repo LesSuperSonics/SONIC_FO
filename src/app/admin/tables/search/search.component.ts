@@ -1,9 +1,12 @@
+
 import { query } from "@angular/animations";
 import { Component, OnInit } from "@angular/core";
 import { EmailValidator, FormControl } from "@angular/forms";
 import { SearchService } from "src/app/_services/search.service";
 import { TokenStorageService } from "src/app/_services/token-storage.service";
 
+declare function disable(): any;
+declare function enable(): any;
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
