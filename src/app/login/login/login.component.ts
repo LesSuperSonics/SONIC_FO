@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../_services/auth.service';
 import { TokenStorageService } from '../../_services/token-storage.service';
@@ -18,6 +19,15 @@ export class LoginComponent implements OnInit {
   isLoginFailed = false;
   errorMessage = '';
   roles: string[] = [];
+
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email
+  ]);
+  passwordFormControl = new FormControl('', [
+    Validators.required,
+    Validators.minLength(6)
+  ]);
 
   constructor(private authService: AuthService, private tokenStorage: TokenStorageService,private router: Router) { }
 
