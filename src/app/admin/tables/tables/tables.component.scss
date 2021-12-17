@@ -16,8 +16,8 @@ mat-button-toggle {
   border-radius: 4px;
   margin-left: 3px;
   margin-right:3px;
-  width: 18px;
-  height: 14px;
+  width: 30px;
+  height: 30px;
   font-family: 'Nunito Semibold', sans-serif;
   font-size: 14px;
   font-style: bold;
@@ -33,30 +33,7 @@ div.center-text {
   margin-top: -3px;
 }
 
-.accepted:hover {
-    border: 1px solid #c5c0c7;
-    background-color: #2cb64e; 
-  }
-  
-  .current:hover {
-    border: 1px solid #c5c0c7;
-    background-color: #e0e0e0; 
-  }
-  .rejected:hover {
-    border: 1px solid #c5c0c7;
-    background-color: #c03d3d; 
-  }
-
-  .accepted:checked {
-    border: 1px solid #c7c0c0;
-    background-color: #2cb64e; 
-  }
-  
-  .current:checked {
-    border: 1px solid #c5c0c7;
-    background-color: #a0c0be; 
-  }
-  .rejected:checked {
-    border: 1px solid #c5c0c7;
-    background-color: #c03d3d; 
-  }
+.mat-button-toggle-checked {
+  border: 1px solid #c5c0c7;
+  background-color: #f5d133; 
+}
