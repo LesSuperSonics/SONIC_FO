@@ -86,6 +86,9 @@ export class TablesComponent implements OnInit, AfterViewInit {
       this.dataService.uploadCsv(formData).subscribe(
         data => {
           console.log(JSON.stringify(data));
+          this.router.navigateByUrl('/dashboard', { skipLocationChange: true }).then(() => {
+            this.router.navigate(['tables']);
+        });
         },
         err => {
           //this.errorMessage = err.error.message;
@@ -94,6 +97,9 @@ export class TablesComponent implements OnInit, AfterViewInit {
         }
       );
     }
+  }
+  reloadPage(): void {
+    window.location.reload();
   }
 
 }
