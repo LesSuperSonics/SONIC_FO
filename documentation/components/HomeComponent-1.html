@@ -64,7 +64,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/admin/dashboard/home/home.component.ts</code>
+    <code>src/app/admin/forms/home/home.component.ts</code>
 </p>
 
 
@@ -134,11 +134,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Optional</span>
-                                <a href="#content" >content</a>
-                            </li>
-                            <li>
-                                <a href="#places" >places</a>
+                                <a href="#navLinks" >navLinks</a>
                             </li>
                         </ul>
                     </td>
@@ -173,45 +169,15 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(userService: <a href="../injectables/UserService.html" target="_self">UserService</a>)</code>
+<code>constructor()</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/admin/dashboard/home/home.component.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/admin/forms/home/home.component.ts:12</a></div>
                             </td>
                         </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>userService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
             </tbody>
         </table>
 </section>
@@ -245,8 +211,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app/admin/dashboard/home/home.component.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="14"
+                            class="link-to-prism">src/app/admin/forms/home/home.component.ts:14</a></div>
                 </td>
             </tr>
 
@@ -272,43 +238,16 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="content"></a>
+                    <a name="navLinks"></a>
                     <span class="name">
-                            <span class="modifier">Optional</span>
-                        <span ><b>content</b></span>
-                        <a href="#content"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>navLinks</b></span>
+                        <a href="#navLinks"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/admin/dashboard/home/home.component.ts:18</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="places"></a>
-                    <span class="name">
-                        <span ><b>places</b></span>
-                        <a href="#places"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../interfaces/Place.html" target="_self" >Array&lt;Place&gt;</a></code>
+                        <i>Type : </i>        <code><a href="../classes/NavLink.html" target="_self" >NavLink[]</a></code>
 
                     </td>
                 </tr>
@@ -319,7 +258,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/admin/dashboard/home/home.component.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/admin/forms/home/home.component.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -333,70 +272,40 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import { UserService } from &#x27;../../../_services/user.service&#x27;;
-interface Place {
-  imgSrc: string;
-  name: string;
-  description: string;
-  charge: string;
-  location: string;
-}
 
+class NavLink {
+  constructor(public path: string, public label: string) {}
+}
 @Component({
   selector: &#x27;app-home&#x27;,
   templateUrl: &#x27;./home.component.html&#x27;,
   styleUrls: [&#x27;./home.component.scss&#x27;]
 })
 export class HomeComponent implements OnInit {
-  places: Array&lt;Place&gt; &#x3D; [];
-  content?: string;
-  constructor(private userService: UserService) {}
+  navLinks: NavLink[] &#x3D; [];
+  constructor() {}
   ngOnInit() {
-    // give access to the scope with authorized resource to use later with users roles 
-    /*this.userService.getAdminBoard().subscribe(
-      data &#x3D;&gt; {
-        this.content &#x3D; data;
-      },
-      err &#x3D;&gt; {
-        this.content &#x3D; JSON.parse(err.error).message;
-      }
-    );*/
-    
+    this.navLinks &#x3D; [
+      new NavLink(&#x27;autocomplete&#x27;, &#x27;Autocomplete&#x27;),
+      new NavLink(&#x27;datepicker&#x27;, &#x27;Datepicker&#x27;),
+      new NavLink(&#x27;checkbox&#x27;, &#x27;Checkbox&#x27;),
+      new NavLink(&#x27;slider&#x27;, &#x27;Slider&#x27;),
+      new NavLink(&#x27;inputs&#x27;, &#x27;Inputs&#x27;),
+      new NavLink(&#x27;other&#x27;, &#x27;Other Form Fields&#x27;)
+    ];
   }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div fxLayout&#x3D;&quot;row wrap&quot; fxLayout.xs&#x3D;&quot;column&quot; fxLayoutAlign&#x3D;&quot;space-between stretch&quot;&gt;
-  &lt;div class&#x3D;&quot;mb10&quot; fxFlex&#x3D;&quot;32&quot; fxFlex.lt-lg&#x3D;&quot;49&quot;&gt;
-    &lt;app-stat [bgClass]&#x3D;&quot;&#x27;capBleue&#x27;&quot; [icon]&#x3D;&quot;&#x27;code&#x27;&quot; [count]&#x3D;&quot;13&quot; [label]&#x3D;&quot;&#x27;Full Stack&#x27;&quot;&gt;&lt;/app-stat&gt;
-  &lt;/div&gt;
-
-  &lt;div class&#x3D;&quot;mb10&quot; fxFlex&#x3D;&quot;32&quot; fxFlex.lt-lg&#x3D;&quot;49&quot;&gt;
-    &lt;app-stat [bgClass]&#x3D;&quot;&#x27;capGrey&#x27;&quot; [icon]&#x3D;&quot;&#x27;bug_report&#x27;&quot; [count]&#x3D;&quot;12&quot; [label]&#x3D;&quot;&#x27;Testing&#x27;&quot;&gt;&lt;/app-stat&gt;
-  &lt;/div&gt;
-
-  &lt;div class&#x3D;&quot;mb10&quot; fxFlex&#x3D;&quot;32&quot; fxFlex.lt-lg&#x3D;&quot;49&quot;&gt;
-    &lt;app-stat [bgClass]&#x3D;&quot;&#x27;capLightBleue&#x27;&quot; [icon]&#x3D;&quot;&#x27;view_list&#x27;&quot; [count]&#x3D;&quot;124&quot; [label]&#x3D;&quot;&#x27;Sales Force&#x27;&quot;&gt;&lt;/app-stat&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-
-
-&lt;div  fxLayout&#x3D;&quot;row wrap&quot; fxLayout.xs&#x3D;&quot;column&quot; fxLayoutAlign&#x3D;&quot;space-between stretch&quot;&gt;
-  &lt;div class&#x3D;&quot;mb10 my-6&quot; fxFlex&#x3D;&quot;32&quot; fxFlex.lt-lg&#x3D;&quot;49&quot;&gt;
-    &lt;app-stat [bgClass]&#x3D;&quot;&#x27;success&#x27;&quot; [icon]&#x3D;&quot;&#x27;verified_user&#x27;&quot; [count]&#x3D;&quot;12&quot; [label]&#x3D;&quot;&#x27;Accepted&#x27;&quot;&gt;&lt;/app-stat&gt;
-  &lt;/div&gt;
-
-  &lt;div class&#x3D;&quot;mb10&quot; fxFlex&#x3D;&quot;32&quot; fxFlex.lt-lg&#x3D;&quot;49&quot;&gt;
-    &lt;app-stat [bgClass]&#x3D;&quot;&#x27;warn&#x27;&quot; [icon]&#x3D;&quot;&#x27;history&#x27;&quot; [count]&#x3D;&quot;124&quot; [label]&#x3D;&quot;&#x27;Current&#x27;&quot;&gt;&lt;/app-stat&gt;
-  &lt;/div&gt;
-
-  &lt;div   class&#x3D;&quot;mb10&quot; fxFlex&#x3D;&quot;32&quot; fxFlex.lt-lg&#x3D;&quot;49&quot;&gt;
-    &lt;app-stat [bgClass]&#x3D;&quot;&#x27;red&#x27;&quot; [icon]&#x3D;&quot;&#x27;not_interested&#x27;&quot; [count]&#x3D;&quot;13&quot; [label]&#x3D;&quot;&#x27;Rejected&#x27;&quot;&gt;&lt;/app-stat&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;section class&#x3D;&quot;bg-white mat-elevation-z10&quot; style&#x3D;&quot;min-height: 80vh;&quot;&gt;
+  &lt;mat-tab-group routerTabs&gt;
+    &lt;mat-tab *ngFor&#x3D;&quot;let link of navLinks&quot; [routerLink]&#x3D;&quot;link.path&quot; [label]&#x3D;&quot;link.label&quot;&gt;
+    &lt;/mat-tab&gt;
+  &lt;/mat-tab-group&gt;
+  &lt;router-outlet style&#x3D;&quot;padding: 12px;&quot;&gt;&lt;/router-outlet&gt;
+&lt;/section&gt;
 </code></pre>
     </div>
 
@@ -404,11 +313,7 @@ export class HomeComponent implements OnInit {
                 <p class="comment">
                     <code>./home.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">@import &#x27;~src/scss/variables&#x27;;
-.location-icon {
-  color: $primary-color;
-}
-</code></pre>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -436,7 +341,7 @@ export class HomeComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-between stretch">  <div class="mb10" fxFlex="32" fxFlex.lt-lg="49">    <app-stat [bgClass]="\'capBleue\'" [icon]="\'code\'" [count]="13" [label]="\'Full Stack\'"></app-stat>  </div>  <div class="mb10" fxFlex="32" fxFlex.lt-lg="49">    <app-stat [bgClass]="\'capGrey\'" [icon]="\'bug_report\'" [count]="12" [label]="\'Testing\'"></app-stat>  </div>  <div class="mb10" fxFlex="32" fxFlex.lt-lg="49">    <app-stat [bgClass]="\'capLightBleue\'" [icon]="\'view_list\'" [count]="124" [label]="\'Sales Force\'"></app-stat>  </div></div><div  fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-between stretch">  <div class="mb10 my-6" fxFlex="32" fxFlex.lt-lg="49">    <app-stat [bgClass]="\'success\'" [icon]="\'verified_user\'" [count]="12" [label]="\'Accepted\'"></app-stat>  </div>  <div class="mb10" fxFlex="32" fxFlex.lt-lg="49">    <app-stat [bgClass]="\'warn\'" [icon]="\'history\'" [count]="124" [label]="\'Current\'"></app-stat>  </div>  <div   class="mb10" fxFlex="32" fxFlex.lt-lg="49">    <app-stat [bgClass]="\'red\'" [icon]="\'not_interested\'" [count]="13" [label]="\'Rejected\'"></app-stat>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><section class="bg-white mat-elevation-z10" style="min-height: 80vh;">  <mat-tab-group routerTabs>    <mat-tab *ngFor="let link of navLinks" [routerLink]="link.path" [label]="link.label">    </mat-tab>  </mat-tab-group>  <router-outlet style="padding: 12px;"></router-outlet></section></div>'
     var COMPONENTS = [{'name': 'AddCandidateComponent', 'selector': 'app-addcandidate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AutoCompleteComponent', 'selector': 'app-auto-complete'},{'name': 'BarChartComponent', 'selector': 'app-bar-chart'},{'name': 'CheckboxComponent', 'selector': 'app-checkbox'},{'name': 'DatepickerComponent', 'selector': 'app-datepicker'},{'name': 'DonutChartComponent', 'selector': 'app-donut-chart'},{'name': 'HomeComponent', 'selector': ''},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputsComponent', 'selector': 'app-inputs'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LineChartComponent', 'selector': 'app-line-chart'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'OtherComponent', 'selector': 'app-other'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PieChartComponent', 'selector': 'app-pie-chart'},{'name': 'PolarChartComponent', 'selector': 'app-polar-chart'},{'name': 'RadarChartComponent', 'selector': 'app-radar-chart'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SelectedValueComponent', 'selector': 'app-selected-value'},{'name': 'SideNavComponent', 'selector': 'app-side-nav'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SliderComponent', 'selector': 'app-slider'},{'name': 'StatComponent', 'selector': 'app-stat'},{'name': 'StatesGroupComponent', 'selector': 'app-states-group'},{'name': 'TablesComponent', 'selector': 'app-tables'},{'name': 'TopNavComponent', 'selector': 'app-top-nav'}];
     var DIRECTIVES = [{'name': 'RouterTab', 'selector': 'mat-tab[routerLink]'},{'name': 'RouterTabs', 'selector': '[routerTabs]'}];
     var ACTUAL_COMPONENT = {'name': 'HomeComponent-1'};

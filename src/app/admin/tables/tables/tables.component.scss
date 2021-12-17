@@ -10,3 +10,30 @@
   margin-top: 1%;
   margin-left: 1%;
 }
+
+mat-button-toggle {
+  border: 1px solid #f28628;
+  border-radius: 4px;
+  margin-left: 3px;
+  margin-right:3px;
+  width: 30px;
+  height: 30px;
+  font-family: 'Nunito Semibold', sans-serif;
+  font-size: 14px;
+  font-style: bold;
+}
+
+.mat-button-toggle-disabled {
+  border: 1px solid #c5c0c7;
+  background-color: #e1dde5;
+}
+
+div.center-text {
+  margin-left: -8px;
+  margin-top: -3px;
+}
+
+.mat-button-toggle-checked {
+  border: 1px solid #c5c0c7;
+  background-color: #f5d133; 
+}

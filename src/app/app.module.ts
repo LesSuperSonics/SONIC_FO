@@ -12,7 +12,7 @@ import { SharedModule } from './shared/shared.module';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { DatePipe } from '@angular/common';
-
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +24,7 @@ import { DatePipe } from '@angular/common';
     CoreModule,
     FormsModule,
     ReactiveFormsModule,
+    MatButtonToggleModule,
     SharedModule
    
   ],

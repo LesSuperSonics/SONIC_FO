@@ -293,8 +293,12 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Output } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { CandidateService } from &#x27;src/app/_services/candidate.service&#x27;;
 import { UserService } from &#x27;../../../_services/user.service&#x27;;
+import { DataService } from &#x27;src/app/_services/data.service&#x27;;
+
 interface Place {
   imgSrc: string;
   name: string;
@@ -303,26 +307,149 @@ interface Place {
   location: string;
 }
 
+const FULLSTACKS &#x3D; &quot;/findFullStacks&quot;;
+const TESTING &#x3D; &quot;/findTestings&quot;;
+const SALESFORCE &#x3D; &quot;/findSalesForces&quot;;
+const STATUS_CURRENT &#x3D; &quot;/findByStatus/CURRENT&quot;;
+const STATUS_ACCEPTED &#x3D; &quot;/findByStatus/ACCEPTED&quot;;
+const STATUS_REJECTED &#x3D; &quot;/findByStatus/REJECTED&quot;;
+
 @Component({
   selector: &#x27;app-home&#x27;,
   templateUrl: &#x27;./home.component.html&#x27;,
   styleUrls: [&#x27;./home.component.scss&#x27;]
 })
 export class HomeComponent implements OnInit {
+
+  countFS: number &#x3D; 0;
+  labelFS: string &#x3D; &quot;&quot;;
+
+  countTS: number &#x3D; 0;
+  labelTS: string &#x3D; &quot;&quot;;
+
+  countSF: number &#x3D; 0;
+  labelSF: string &#x3D; &quot;&quot;;
+
+  countCR: number &#x3D; 0;
+  labelCR: string &#x3D; &quot;&quot;;
+
+  countAC: number &#x3D; 0;
+  labelAC: string &#x3D; &quot;&quot;;
+
+  countRJ: number &#x3D; 0;
+  labelRJ: string &#x3D; &quot;&quot;;
+
   places: Array&lt;Place&gt; &#x3D; [];
   content?: string;
-  constructor(private userService: UserService) {}
+  constructor(private router: Router, private candidateService: CandidateService, private dataService: DataService) { }
+
   ngOnInit() {
-    // give access to the scope with authorized resource to use later with users roles 
-    /*this.userService.getAdminBoard().subscribe(
-      data &#x3D;&gt; {
-        this.content &#x3D; data;
-      },
-      err &#x3D;&gt; {
-        this.content &#x3D; JSON.parse(err.error).message;
+    this.getFullStack();
+    this.getTesting();
+    this.getSalesForce();
+
+    this.getCurrent();
+    this.getAccepted();
+    this.getRejected();
+  }
+
+  getFullStack() {
+    this.candidateService.getFullStack().subscribe(
+      res &#x3D;&gt; {
+        this.labelFS &#x3D; &quot;FullStack&quot;,
+          this.countFS &#x3D; JSON.parse(JSON.stringify(res))[&#x27;Total_FullStack&#x27;]
+        //console.log(this.label + this.count)
+      });
+  }
+
+  getTesting() {
+    this.candidateService.getTesting().subscribe(
+      res &#x3D;&gt; {
+        this.labelTS &#x3D; &quot;Testing&quot;,
+          this.countTS &#x3D; JSON.parse(JSON.stringify(res))[&#x27;Total_Testing&#x27;]
+
+      });
+  }
+
+  getSalesForce() {
+    this.candidateService.getSaleForce().subscribe(
+      res &#x3D;&gt; {
+        this.labelSF &#x3D; &quot;SalesForce&quot;,
+          this.countSF &#x3D; JSON.parse(JSON.stringify(res))[&#x27;Total_SalesForce&#x27;]
+
+      });
+  }
+
+  getCurrent() {
+    this.candidateService.getCurrent().subscribe(
+      res &#x3D;&gt; {
+        this.labelCR &#x3D; &quot;Current&quot;,
+          this.countCR &#x3D; JSON.parse(JSON.stringify(res))[&#x27;Total_Current&#x27;]
+      });
+
+  }
+
+
+  getAccepted() {
+    this.candidateService.getAccepted().subscribe(
+      res &#x3D;&gt; {
+        this.labelAC &#x3D; &quot;Accepted&quot;,
+          this.countAC &#x3D; JSON.parse(JSON.stringify(res))[&#x27;Total_Accepted&#x27;]
+      });
+
+  }
+
+  getRejected() {
+    this.candidateService.getRejected().subscribe(
+      res &#x3D;&gt; {
+        this.labelRJ &#x3D; &quot;Rejected&quot;,
+          this.countRJ &#x3D; JSON.parse(JSON.stringify(res))[&#x27;Total_Rejected&#x27;]
+      });
+
+  }
+
+
+  // give access to the scope with authorized resource to use later with users roles 
+  /*this.userService.getAdminBoard().subscribe(
+    data &#x3D;&gt; {
+      this.content &#x3D; data;
+    },
+    err &#x3D;&gt; {
+      this.content &#x3D; JSON.parse(err.error).message;
+    }
+  );*/
+
+  onViewDetailsClicked(label) {
+    switch (label) {
+      case &quot;FullStack&quot;: {
+        this.dataService.param&#x3D;FULLSTACKS;
+        break;
       }
-    );*/
-    
+      case &quot;Testing&quot;: {
+        this.dataService.param&#x3D;TESTING;
+        break;
+      }
+      case &quot;SalesForce&quot;: {
+        this.dataService.param&#x3D;SALESFORCE;
+
+        break;
+      }
+      case &quot;Current&quot;: {
+        this.dataService.param&#x3D;STATUS_CURRENT;
+
+        break;
+      }
+      case &quot;Accepted&quot;: {
+        this.dataService.param&#x3D;STATUS_ACCEPTED;
+
+        break;
+      }
+      case &quot;Rejected&quot;: {
+        this.dataService.param&#x3D;STATUS_REJECTED;
+        break;
+      }
+    }
+    this.router.navigate([&quot;/tables&quot;]);
   }
 }
 </code></pre>

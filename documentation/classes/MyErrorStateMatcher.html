@@ -137,8 +137,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="12"
-                            class="link-to-prism">src/app/admin/addcandidate/addcandidate/addcandidate.component.ts:12</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/admin/addcandidate/addcandidate/addcandidate.component.ts:22</a></div>
                 </td>
             </tr>
 
@@ -208,16 +208,26 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { DatePipe } from &#x27;@angular/common&#x27;;
 import {
+  FormBuilder,
   FormControl,
+  FormGroup,
   FormGroupDirective,
   NgForm,
   Validators
 } from &#x27;@angular/forms&#x27;;
 import { ErrorStateMatcher } from &#x27;@angular/material/core&#x27;;
+import { Candidate } from &#x27;src/app/models/candidate&#x27;;
+import { CandidateService } from &#x27;src/app/_services/candidate.service&#x27;;
+import { COMMA, ENTER } from &#x27;@angular/cdk/keycodes&#x27;;
+import { MatChipInputEvent } from &#x27;@angular/material/chips&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
 
 /** Error when invalid control is dirty, touched, or submitted. */
+
 class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(
     control: FormControl | null,
@@ -232,12 +242,26 @@ class MyErrorStateMatcher implements ErrorStateMatcher {
   }
 }
 
+/** Error when invalid control is dirty, touched, or submitted. */
+/*
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted &#x3D; form &amp;&amp; form.submitted;
+    return !!(control &amp;&amp; control.invalid &amp;&amp; (control.dirty || control.touched || isSubmitted));
+  }
+}
+*/
+
+
 @Component({
   selector: &#x27;app-addcandidate&#x27;,
   templateUrl: &#x27;./addcandidate.component.html&#x27;,
   styleUrls: [&#x27;./addcandidate.component.scss&#x27;]
 })
 export class AddCandidateComponent implements OnInit {
+
+  constructor(private datePipe : DatePipe, private router: Router, private candidatService : CandidateService,  private formBuilder : FormBuilder) {}
+
   emailFormControl &#x3D; new FormControl(&#x27;&#x27;, [
     Validators.required,
     Validators.email
@@ -248,11 +272,154 @@ export class AddCandidateComponent implements OnInit {
     ]);
 
   matcher &#x3D; new MyErrorStateMatcher();
-  constructor() {}
 
-  ngOnInit() {
-    console.log(&quot;AddCandidate.ngOnInit()&quot;)
+
+  candidateForm !: FormGroup;
+  candidate : Candidate &#x3D; new Candidate();
+
+  ngOnInit() : void {
+   this.candidateForm &#x3D; this.formBuilder.group({
+    cin : [&#x27;&#x27;],
+    passportId : [&#x27;&#x27;],
+    firstName: [&#x27;&#x27;],
+    lastName: [&#x27;&#x27;],
+    phoneNumber: [&#x27;&#x27;],
+    email: [&#x27;&#x27;],
+    address: [&#x27;&#x27;],
+    expDuration: null,
+    profile: [&#x27;&#x27;],
+    receivedDate : null
+    
+   })
   }
+
+  persistCandidate(){
+
+    this.candidate.cin &#x3D; this.candidateForm.value.cin;
+    this.candidate.passportId &#x3D; this.candidateForm.value.passportId;
+    this.candidate.firstName &#x3D; this.candidateForm.value.firstName;
+    this.candidate.lastName &#x3D; this.candidateForm.value.lastName;
+    this.candidate.email &#x3D; this.candidateForm.value.email;
+    this.candidate.phoneNumber &#x3D; this.candidateForm.value.phoneNumber;
+    this.candidate.address &#x3D; this.candidateForm.value.address;
+    this.candidate.expDuration &#x3D; this.candidateForm.value.expDuration;
+    this.candidate.profile &#x3D; this.candidateForm.value.profile;
+    this.candidate.receivedDate &#x3D; this.convert(this.candidateForm.value.receivedDate)  ;
+
+    console.log(this.candidate.receivedDate +&quot; &quot;+this.candidate.email);
+    this.candidatService.addCandidate(this.candidate)
+    .subscribe((res : Candidate) &#x3D;&gt; {
+      console.log(res);
+      alert(&quot;candidate added successfuly&quot;);
+      this.router.navigate([&#x27;/tables&#x27;]);
+    },
+    err&#x3D;&gt;{
+      alert(&quot;something went wrong&quot;)
+    })
+  }
+
+   convert(str) {
+    var date &#x3D; new Date(str),
+      mnth &#x3D; (&quot;0&quot; + (date.getMonth() + 1)).slice(-2),
+      day &#x3D; (&quot;0&quot; + date.getDate()).slice(-2);
+    return [day, mnth,date.getFullYear()].join(&quot;/&quot;);
+  }
+  /*
+  constructor(private candidatService : CandidateService) {}
+   candidates : Candidate[];
+
+   ngOnInit(): void {}
+  
+   persistCandidate(data: Candidate) {
+    this.candidatService.addCandidate(data)
+        .subscribe((res: Candidate) &#x3D;&gt; this.candidates &#x3D; [res, ...this.candidates])
+  }
+
+  emailFormControl &#x3D; new FormControl(&#x27;&#x27;, [Validators.required, Validators.email]);
+  matcher &#x3D; new MyErrorStateMatcher();
+
+*/
+
+  
+  /*
+  emailFormControl &#x3D; new FormControl(&#x27;&#x27;, [
+    Validators.required,
+    Validators.email
+  ]);
+  phoneFormControl &#x3D; new FormControl(&#x27;&#x27;, [
+    Validators.required,
+    Validators.pattern(&#x27;[- +()0-9]+&#x27;)
+    ]);
+
+  matcher &#x3D; new MyErrorStateMatcher();
+
+  constructor(private candidatService : CandidateService, private formBuilder : FormBuilder) {}
+
+  candidateForm !: FormGroup;
+  candidate : Candidate &#x3D; new Candidate();
+
+  ngOnInit() : void {
+   this.candidateForm &#x3D; this.formBuilder.group({
+    cin : [&#x27;&#x27;],
+    passportId : [&#x27;&#x27;],
+    firstName: [&#x27;&#x27;],
+    lastName: [&#x27;&#x27;],
+    phoneNumber: [&#x27;&#x27;],
+    email: [&#x27;&#x27;],
+    address: [&#x27;&#x27;],
+    expDuration: null,
+    profile: [&#x27;&#x27;],
+    receivedDate : null
+    
+   })
+  }
+
+   */
+  
+  //candidates : Candidate[];
+ 
+
+
+/*
+  persistCandidate(){
+
+    this.candidate.cin &#x3D; this.candidateForm.value.cin;
+    this.candidate.passportId &#x3D; this.candidateForm.value.passportId;
+    this.candidate.firstName &#x3D; this.candidateForm.value.firstName;
+    this.candidate.lastName &#x3D; this.candidateForm.value.lastName;
+    this.candidate.email &#x3D; this.candidateForm.value.email;
+    this.candidate.phoneNumber &#x3D; this.candidateForm.value.phoneNumber;
+    this.candidate.address &#x3D; this.candidateForm.value.address;
+    this.candidate.expDuration &#x3D; this.candidateForm.value.expDuration;
+    this.candidate.profile &#x3D; this.candidateForm.value.profile;
+    this.candidate.receivedDate &#x3D; this.candidateForm.value.receivedDate;
+
+    this.candidatService.addCandidate(this.candidate)
+    .subscribe((res : Candidate) &#x3D;&gt; {
+      console.log(res);
+      alert(&quot;candidate added successfuly&quot;);
+    },
+    err&#x3D;&gt;{
+      alert(&quot;something went wrong&quot;)
+    })
+  }
+
+  */
+
+   /*
+    this.candidatService.addCandidate(this.candidatesForm)
+    .subscribe((res : Candidate) &#x3D;&gt; {
+      this.candidates &#x3D; [res, ...this.candidates]
+    })
+  }
+  */
+  /*
+  persistCandidate(data : Candidate){
+    this.candidatService.addCandidate(data)
+      .subscribe((res : Candidate) &#x3D;&gt; this.candidates &#x3D; [res, ...this.candidates])
+  }
+  */
+ 
 }
 </code></pre>
     </div>

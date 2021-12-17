@@ -8,7 +8,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { SearchService } from 'src/app/_services/search.service';
 import { Subscription } from 'rxjs';
 
-
 const ALL = "";
 
 @Component({

@@ -9,6 +9,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
 
 
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { TablesRoutingModule } from './tables-routing.module';
 import { TablesComponent } from './tables/tables.component';
 import { DataService } from 'src/app/_services/data.service';
@@ -41,7 +42,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatIconModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatButtonToggleModule
   ],
   declarations: [
     TablesComponent,
