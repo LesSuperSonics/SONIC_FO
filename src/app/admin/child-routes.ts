@@ -9,7 +9,7 @@ export const childRoutes = [
     path: 'tables',
     loadChildren: () =>
       import('./tables/tables.module').then(m => m.TablesModule),
-    data: { icon: 'table_chart', text: 'Tables' }
+    data: { icon: 'supervisor_account', text: 'Candidates' }
   },
   {
     path: 'charts',
@@ -20,6 +20,6 @@ export const childRoutes = [
   {
     path: 'forms',
     loadChildren: () => import('./forms/forms.module').then(m => m.FormsModule),
-    data: { icon: 'assignment', text: 'Forms' }
+    data: { icon: 'contact_support', text: 'Help' }
   }
 ];

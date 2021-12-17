@@ -1,23 +1,50 @@
-<div class="search-box" >
-    <mat-card fxLayout.xs="column" fxFlex.gt-xs="40" class="mb15" fxLayout="column wrap" fxLayout.lt-xs="column" fxLayoutAlign="space-around stretch">
-      <mat-card-header>
-        <mat-card-title>Search for a candidate</mat-card-title>
-      </mat-card-header>
-        <mat-card-content>
-            <mat-checkbox>First Name</mat-checkbox>
-            <mat-checkbox>Last Name</mat-checkbox>
-            <mat-checkbox>Age</mat-checkbox>
-            <mat-checkbox>Profile</mat-checkbox>
-            <mat-checkbox>Work Experience</mat-checkbox>
-        </mat-card-content>
-        <mat-card-content align="end">
-            <mat-form-field  appearance="legacy">
+<div>
+    <mat-expansion-panel class="search-box">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Search for a candidate
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div>
+            <mat-checkbox class="mat-checkbox" [formControl]="disableFirstNameSelect">First Name</mat-checkbox>
+            <mat-form-field class="search" appearance="legacy" >
                 <mat-label>Search</mat-label>
-                <input matInput placeholder="">
-                <mat-icon matSuffix>search</mat-icon>
+                <input matInput placeholder="" [disabled]="!disableFirstNameSelect.value" [(ngModel)]="form.firstName">
+                <mat-icon matSuffix *ngIf="disableFirstNameSelect.value">search</mat-icon>
             </mat-form-field>
-        </mat-card-content>
-        
-        
-    </mat-card>
+            <mat-checkbox class="mat-checkbox" [formControl]="disableLastNameSelect">Last Name</mat-checkbox>
+            <mat-form-field class="search" appearance="legacy">
+                <mat-label>Search</mat-label>
+                <input matInput placeholder="" [disabled]="!disableLastNameSelect.value" [(ngModel)]="form.lastName">
+                <mat-icon matSuffix *ngIf="disableLastNameSelect.value">search</mat-icon>
+            </mat-form-field>
+        </div>
+        <div>
+
+        </div>
+        <div>
+            <mat-checkbox class="mat-checkbox" [formControl]="disablePhoneNumberSelect">Phone Number</mat-checkbox>
+            <mat-form-field class="search" appearance="legacy" >
+                <mat-label>Search</mat-label>
+                <input matInput placeholder="" [disabled]="!disablePhoneNumberSelect.value" [(ngModel)]="form.phoneNumber">
+                <mat-icon matSuffix *ngIf="disablePhoneNumberSelect.value">search</mat-icon>
+            </mat-form-field>
+            <mat-checkbox class="mat-checkbox" [formControl]="disableEmailSelect">Email</mat-checkbox>
+            <mat-form-field class="search" appearance="legacy" >
+                <mat-label>Search</mat-label>
+                <input matInput placeholder="" [disabled]="!disableEmailSelect.value" [(ngModel)]="form.email">
+                <mat-icon matSuffix *ngIf="disableEmailSelect.value">search</mat-icon>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-checkbox class="mat-checkbox" [formControl]="disableExpSelect">Years of experience</mat-checkbox>
+            <mat-form-field class="search">
+                <input matInput type="number" min="0" placeholder="Years of experience"
+                    [disabled]="!disableExpSelect.value"  [(ngModel)]="form.exp">
+            </mat-form-field>
+        </div>
+        <mat-action-row>
+            <button mat-button color="primary" (click)="onSearch()">Search</button>
+          </mat-action-row>
+    </mat-expansion-panel>
 </div>

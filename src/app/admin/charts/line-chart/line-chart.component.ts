@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ChartService } from 'src/app/_services/chart.service';
 
 @Component({
   selector: 'app-line-chart',
@@ -6,19 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./line-chart.component.scss']
 })
 export class LineChartComponent implements OnInit {
+  tab:number[]=[];
   lineChartData: Array<any> = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
-    { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' },
-    { data: [18, 48, 77, 9, 100, 27, 40], label: 'Series C' }
+    { data: [], label: 'Candidates' }
   ];
   lineChartLabels: Array<any> = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July'
   ];
   lineChartOptions: any = {
     responsive: true
@@ -54,9 +47,11 @@ export class LineChartComponent implements OnInit {
   ];
   lineChartLegend = true;
   lineChartType = 'line';
-  constructor() {}
+  constructor(private chartService:ChartService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.onTimeLineChartCallCall();
+  }
   chartClicked(e: any): void {
     console.log(e.active);
     console.log(e.event);
@@ -64,5 +59,19 @@ export class LineChartComponent implements OnInit {
 
   chartHovered(e: any): void {
     console.log(e);
+  }
+   // Pie Chart values functions
+   onTimeLineChartCallCall() {
+    this.chartService.TimeLineChartCall().subscribe(
+      res => {
+        res.forEach(element => {
+          this.lineChartData[0].data.push(element[0]);
+          this.lineChartLabels.push(""+element[1]);
+        });
+      },
+      err => {
+        console.log("error");
+      }
+    );
   }
 }

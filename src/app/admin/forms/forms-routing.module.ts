@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, Route } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
@@ -8,7 +8,7 @@ import { SliderComponent } from './slider/slider.component';
 import { InputsComponent } from './inputs/inputs.component';
 import { OtherComponent } from './other/other.component';
 
-const routes: Routes = [
+const routes: Route[] = [
   {
     path: '',
     component: HomeComponent,

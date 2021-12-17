@@ -20,7 +20,6 @@ export class SignupComponent implements OnInit {
   isSignUpFailed = false;
   errorMessage = '';
 
-
   firstnameFormControl = new FormControl('', [
     Validators.required,
     Validators.minLength(3),

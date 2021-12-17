@@ -1,0 +1,799 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>angular-material-admin documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">angular-material-admin documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  SearchComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/admin/tables/search/search.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-search</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./search.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./search.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#disableEmailSelect" >disableEmailSelect</a>
+                            </li>
+                            <li>
+                                <a href="#disableExpSelect" >disableExpSelect</a>
+                            </li>
+                            <li>
+                                <a href="#disableFirstNameSelect" >disableFirstNameSelect</a>
+                            </li>
+                            <li>
+                                <a href="#disableLastNameSelect" >disableLastNameSelect</a>
+                            </li>
+                            <li>
+                                <a href="#disablePhoneNumberSelect" >disablePhoneNumberSelect</a>
+                            </li>
+                            <li>
+                                <a href="#disableStatusSelect" >disableStatusSelect</a>
+                            </li>
+                            <li>
+                                <a href="#form" >form</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getQuery" >getQuery</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSearch" >onSearch</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(searchService: <a href="../injectables/SearchService.html" target="_self">SearchService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/admin/tables/search/search.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>searchService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SearchService.html" target="_self" >SearchService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getQuery"></a>
+                    <span class="name">
+                        <span ><b>getQuery</b></span>
+                        <a href="#getQuery"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getQuery()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/admin/tables/search/search.component.ts:39</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/app/admin/tables/search/search.component.ts:33</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSearch"></a>
+                    <span class="name">
+                        <span ><b>onSearch</b></span>
+                        <a href="#onSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSearch()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/admin/tables/search/search.component.ts:36</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="disableEmailSelect"></a>
+                    <span class="name">
+                        <span ><b>disableEmailSelect</b></span>
+                        <a href="#disableEmailSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormControl(false)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/admin/tables/search/search.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="disableExpSelect"></a>
+                    <span class="name">
+                        <span ><b>disableExpSelect</b></span>
+                        <a href="#disableExpSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormControl(false)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/admin/tables/search/search.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="disableFirstNameSelect"></a>
+                    <span class="name">
+                        <span ><b>disableFirstNameSelect</b></span>
+                        <a href="#disableFirstNameSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormControl(false)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/admin/tables/search/search.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="disableLastNameSelect"></a>
+                    <span class="name">
+                        <span ><b>disableLastNameSelect</b></span>
+                        <a href="#disableLastNameSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormControl(false)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/admin/tables/search/search.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="disablePhoneNumberSelect"></a>
+                    <span class="name">
+                        <span ><b>disablePhoneNumberSelect</b></span>
+                        <a href="#disablePhoneNumberSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormControl(false)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/admin/tables/search/search.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="disableStatusSelect"></a>
+                    <span class="name">
+                        <span ><b>disableStatusSelect</b></span>
+                        <a href="#disableStatusSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormControl(false)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/admin/tables/search/search.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="form"></a>
+                    <span class="name">
+                        <span ><b>form</b></span>
+                        <a href="#form"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    firstName: null,
+    lastName: null,
+    email: null,
+    phoneNumber: null,
+    exp: null,
+    status: null
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/admin/tables/search/search.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { query } from &quot;@angular/animations&quot;;
+import { Component, OnInit } from &quot;@angular/core&quot;;
+import { EmailValidator, FormControl } from &quot;@angular/forms&quot;;
+import { SearchService } from &quot;src/app/_services/search.service&quot;;
+import { TokenStorageService } from &quot;src/app/_services/token-storage.service&quot;;
+
+declare function disable(): any;
+declare function enable(): any;
+@Component({
+  selector: &#x27;app-search&#x27;,
+  templateUrl: &#x27;./search.component.html&#x27;,
+  styleUrls: [&#x27;./search.component.scss&#x27;]
+})
+export class SearchComponent implements OnInit {
+  form: any &#x3D; {
+    firstName: null,
+    lastName: null,
+    email: null,
+    phoneNumber: null,
+    exp: null,
+    status: null
+  };
+  disableFirstNameSelect &#x3D; new FormControl(false);
+  disableLastNameSelect &#x3D; new FormControl(false);
+  disablePhoneNumberSelect &#x3D; new FormControl(false);
+  disableEmailSelect &#x3D; new FormControl(false);
+  disableExpSelect &#x3D; new FormControl(false);
+  disableStatusSelect &#x3D; new FormControl(false);
+
+  constructor(private searchService: SearchService) { }
+
+  ngOnInit() {
+  }
+
+  onSearch() {
+    this.searchService.sendQueryToTable(this.getQuery());
+  }
+  getQuery(): string {
+    var query &#x3D; &quot;&quot;;
+    if (this.disableFirstNameSelect.value &amp;&amp; !(this.form.firstName &#x3D;&#x3D; null) &amp;&amp; !(this.form.firstName &#x3D;&#x3D; &quot;&quot;)) {
+      query +&#x3D; &quot;firstName:&quot; + this.form.firstName + &quot; AND &quot;;
+    }
+    if (this.disableLastNameSelect.value &amp;&amp; !(this.form.lastName &#x3D;&#x3D; null) &amp;&amp; !(this.form.lastName &#x3D;&#x3D; &quot;&quot;)) {
+      query +&#x3D; &quot;lastName:&quot; + this.form.lastName + &quot; AND &quot;;
+    }
+    if (this.disableEmailSelect.value &amp;&amp; !(this.form.email &#x3D;&#x3D; null) &amp;&amp; !(this.form.email &#x3D;&#x3D; &quot;&quot;)) {
+      query +&#x3D; &quot;email:&quot; + this.form.email + &quot; AND &quot;;
+    }
+    if (this.disablePhoneNumberSelect.value &amp;&amp; !(this.form.phoneNumber &#x3D;&#x3D; null) &amp;&amp; !(this.form.phoneNumber &#x3D;&#x3D; &quot;&quot;)) {
+      query +&#x3D; &quot;phoneNumber:&quot; + this.form.phoneNumber + &quot; AND &quot;;
+    }
+    if (this.disableExpSelect.value &amp;&amp; !(this.form.exp &#x3D;&#x3D; null)) {
+      query +&#x3D; &quot;expDuration:&quot; + this.form.exp + &quot; AND &quot;;
+    }
+    /*if (this.disableStatusSelect.value &amp;&amp; !(this.form.status &#x3D;&#x3D; null)) {
+      query+&#x3D;&quot;status:&quot;+this.form.status+&quot; AND &quot;;
+    }*/ // enum issue
+    return query;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div&gt;
+    &lt;mat-expansion-panel class&#x3D;&quot;search-box&quot;&gt;
+        &lt;mat-expansion-panel-header&gt;
+            &lt;mat-panel-title&gt;
+                Search for a candidate
+            &lt;/mat-panel-title&gt;
+        &lt;/mat-expansion-panel-header&gt;
+        &lt;div&gt;
+            &lt;mat-checkbox class&#x3D;&quot;mat-checkbox&quot; [formControl]&#x3D;&quot;disableFirstNameSelect&quot;&gt;First Name&lt;/mat-checkbox&gt;
+            &lt;mat-form-field class&#x3D;&quot;search&quot; appearance&#x3D;&quot;legacy&quot; &gt;
+                &lt;mat-label&gt;Search&lt;/mat-label&gt;
+                &lt;input matInput placeholder&#x3D;&quot;&quot; [disabled]&#x3D;&quot;!disableFirstNameSelect.value&quot; [(ngModel)]&#x3D;&quot;form.firstName&quot;&gt;
+                &lt;mat-icon matSuffix *ngIf&#x3D;&quot;disableFirstNameSelect.value&quot;&gt;search&lt;/mat-icon&gt;
+            &lt;/mat-form-field&gt;
+            &lt;mat-checkbox class&#x3D;&quot;mat-checkbox&quot; [formControl]&#x3D;&quot;disableLastNameSelect&quot;&gt;Last Name&lt;/mat-checkbox&gt;
+            &lt;mat-form-field class&#x3D;&quot;search&quot; appearance&#x3D;&quot;legacy&quot;&gt;
+                &lt;mat-label&gt;Search&lt;/mat-label&gt;
+                &lt;input matInput placeholder&#x3D;&quot;&quot; [disabled]&#x3D;&quot;!disableLastNameSelect.value&quot; [(ngModel)]&#x3D;&quot;form.lastName&quot;&gt;
+                &lt;mat-icon matSuffix *ngIf&#x3D;&quot;disableLastNameSelect.value&quot;&gt;search&lt;/mat-icon&gt;
+            &lt;/mat-form-field&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;mat-checkbox class&#x3D;&quot;mat-checkbox&quot; [formControl]&#x3D;&quot;disablePhoneNumberSelect&quot;&gt;Phone Number&lt;/mat-checkbox&gt;
+            &lt;mat-form-field class&#x3D;&quot;search&quot; appearance&#x3D;&quot;legacy&quot; &gt;
+                &lt;mat-label&gt;Search&lt;/mat-label&gt;
+                &lt;input matInput placeholder&#x3D;&quot;&quot; [disabled]&#x3D;&quot;!disablePhoneNumberSelect.value&quot; [(ngModel)]&#x3D;&quot;form.phoneNumber&quot;&gt;
+                &lt;mat-icon matSuffix *ngIf&#x3D;&quot;disablePhoneNumberSelect.value&quot;&gt;search&lt;/mat-icon&gt;
+            &lt;/mat-form-field&gt;
+            &lt;mat-checkbox class&#x3D;&quot;mat-checkbox&quot; [formControl]&#x3D;&quot;disableEmailSelect&quot;&gt;Email&lt;/mat-checkbox&gt;
+            &lt;mat-form-field class&#x3D;&quot;search&quot; appearance&#x3D;&quot;legacy&quot; &gt;
+                &lt;mat-label&gt;Search&lt;/mat-label&gt;
+                &lt;input matInput placeholder&#x3D;&quot;&quot; [disabled]&#x3D;&quot;!disableEmailSelect.value&quot; [(ngModel)]&#x3D;&quot;form.email&quot;&gt;
+                &lt;mat-icon matSuffix *ngIf&#x3D;&quot;disableEmailSelect.value&quot;&gt;search&lt;/mat-icon&gt;
+            &lt;/mat-form-field&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;mat-checkbox class&#x3D;&quot;mat-checkbox&quot; [formControl]&#x3D;&quot;disableExpSelect&quot;&gt;Years of experience&lt;/mat-checkbox&gt;
+            &lt;mat-form-field class&#x3D;&quot;search&quot;&gt;
+                &lt;input matInput type&#x3D;&quot;number&quot; min&#x3D;&quot;0&quot; placeholder&#x3D;&quot;Years of experience&quot;
+                    [disabled]&#x3D;&quot;!disableExpSelect.value&quot;  [(ngModel)]&#x3D;&quot;form.exp&quot;&gt;
+            &lt;/mat-form-field&gt;
+        &lt;/div&gt;
+        &lt;mat-action-row&gt;
+            &lt;button mat-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;onSearch()&quot;&gt;Search&lt;/button&gt;
+          &lt;/mat-action-row&gt;
+    &lt;/mat-expansion-panel&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./search.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.search-box{
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+.mat-checkbox{
+  margin-right: 16px;
+  padding-left: 16px;
+  min-width: 150px;
+}
+.search{
+  width: 200px;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div>    <mat-expansion-panel class="search-box">        <mat-expansion-panel-header>            <mat-panel-title>                Search for a candidate            </mat-panel-title>        </mat-expansion-panel-header>        <div>            <mat-checkbox class="mat-checkbox" [formControl]="disableFirstNameSelect">First Name</mat-checkbox>            <mat-form-field class="search" appearance="legacy" >                <mat-label>Search</mat-label>                <input matInput placeholder="" [disabled]="!disableFirstNameSelect.value" [(ngModel)]="form.firstName">                <mat-icon matSuffix *ngIf="disableFirstNameSelect.value">search</mat-icon>            </mat-form-field>            <mat-checkbox class="mat-checkbox" [formControl]="disableLastNameSelect">Last Name</mat-checkbox>            <mat-form-field class="search" appearance="legacy">                <mat-label>Search</mat-label>                <input matInput placeholder="" [disabled]="!disableLastNameSelect.value" [(ngModel)]="form.lastName">                <mat-icon matSuffix *ngIf="disableLastNameSelect.value">search</mat-icon>            </mat-form-field>        </div>        <div>        </div>        <div>            <mat-checkbox class="mat-checkbox" [formControl]="disablePhoneNumberSelect">Phone Number</mat-checkbox>            <mat-form-field class="search" appearance="legacy" >                <mat-label>Search</mat-label>                <input matInput placeholder="" [disabled]="!disablePhoneNumberSelect.value" [(ngModel)]="form.phoneNumber">                <mat-icon matSuffix *ngIf="disablePhoneNumberSelect.value">search</mat-icon>            </mat-form-field>            <mat-checkbox class="mat-checkbox" [formControl]="disableEmailSelect">Email</mat-checkbox>            <mat-form-field class="search" appearance="legacy" >                <mat-label>Search</mat-label>                <input matInput placeholder="" [disabled]="!disableEmailSelect.value" [(ngModel)]="form.email">                <mat-icon matSuffix *ngIf="disableEmailSelect.value">search</mat-icon>            </mat-form-field>        </div>        <div>            <mat-checkbox class="mat-checkbox" [formControl]="disableExpSelect">Years of experience</mat-checkbox>            <mat-form-field class="search">                <input matInput type="number" min="0" placeholder="Years of experience"                    [disabled]="!disableExpSelect.value"  [(ngModel)]="form.exp">            </mat-form-field>        </div>        <mat-action-row>            <button mat-button color="primary" (click)="onSearch()">Search</button>          </mat-action-row>    </mat-expansion-panel></div></div>'
+    var COMPONENTS = [{'name': 'AddCandidateComponent', 'selector': 'app-addcandidate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AutoCompleteComponent', 'selector': 'app-auto-complete'},{'name': 'BarChartComponent', 'selector': 'app-bar-chart'},{'name': 'CheckboxComponent', 'selector': 'app-checkbox'},{'name': 'DatepickerComponent', 'selector': 'app-datepicker'},{'name': 'DonutChartComponent', 'selector': 'app-donut-chart'},{'name': 'HomeComponent', 'selector': ''},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputsComponent', 'selector': 'app-inputs'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LineChartComponent', 'selector': 'app-line-chart'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'OtherComponent', 'selector': 'app-other'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PieChartComponent', 'selector': 'app-pie-chart'},{'name': 'PolarChartComponent', 'selector': 'app-polar-chart'},{'name': 'RadarChartComponent', 'selector': 'app-radar-chart'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SelectedValueComponent', 'selector': 'app-selected-value'},{'name': 'SideNavComponent', 'selector': 'app-side-nav'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SliderComponent', 'selector': 'app-slider'},{'name': 'StatComponent', 'selector': 'app-stat'},{'name': 'StatesGroupComponent', 'selector': 'app-states-group'},{'name': 'TablesComponent', 'selector': 'app-tables'},{'name': 'TopNavComponent', 'selector': 'app-top-nav'}];
+    var DIRECTIVES = [{'name': 'RouterTab', 'selector': 'mat-tab[routerLink]'},{'name': 'RouterTabs', 'selector': '[routerTabs]'}];
+    var ACTUAL_COMPONENT = {'name': 'SearchComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SearchComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

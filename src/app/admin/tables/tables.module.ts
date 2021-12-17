@@ -9,17 +9,28 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
 
 
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { TablesRoutingModule } from './tables-routing.module';
 import { TablesComponent } from './tables/tables.component';
-import { DataService } from './data.service';
+import { DataService } from 'src/app/_services/data.service';
 import { SearchComponent } from './search/search.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
+
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     TablesRoutingModule,
+    ReactiveFormsModule,
+    MatExpansionModule,
     MatTableModule,
     MatFormFieldModule,
     MatPaginatorModule,
@@ -28,12 +39,15 @@ import { MatIconModule } from '@angular/material/icon';
     MatCheckboxModule,
     MatButtonModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonToggleModule
   ],
   declarations: [
     TablesComponent,
     SearchComponent
-  ],
-  providers: [DataService]
+  ]
 })
 export class TablesModule {}
