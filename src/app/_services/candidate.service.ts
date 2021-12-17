@@ -49,7 +49,11 @@ export class CandidateService {
 
 
   }
-  
+  // Change status route
+UpdateStatusOfCandidate(id,newStatus): Observable<any>{
+  const body = { status:newStatus };
+    return this.http.put(`${environment.apiUrl}/candidates/candidate/changeStatus/` + id, body,this.httpOptions);
+      }
 
 // profiles
 
