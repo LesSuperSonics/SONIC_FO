@@ -19,12 +19,14 @@ export interface CandidateData {
   receivedDate: string;
 }
 const GET_API = "http://localhost:8080/api/candidates";
+const CSV_API = "http://localhost:8080/api/csv/upload"
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  private param$  = new BehaviorSubject("Default");; // this param will be modified from Dashboard to show corresponding data on table
+  //private param$ = new BehaviorSubject("");; // this param will be modified from Dashboard to show corresponding data on table
+  private _param: string = "";
   constructor(private http: HttpClient, private tokenStorageService: TokenStorageService) { }
   httpOptions = {
     headers: new HttpHeaders({
@@ -32,13 +34,31 @@ export class DataService {
       'Authorization': 'Bearer ' + this.tokenStorageService.getToken()
     })
   };
-  getCandidatesBy(param: string): Observable<any> {
-    return this.http.get(GET_API + param, this.httpOptions);
+  getCandidates(): Observable<any> {
+    return this.http.get(GET_API + this._param, this.httpOptions);
   }
-  changeParam(route: string) {
+  /*changeParam(route: string) {
     this.param$.next(route);
   }
-  getParam(){
+  getParam() {
     return this.param$.asObservable();
+  }*/
+  public set param(param: string) {
+    this._param = param;
   }
+
+  public getParam(): string {
+    return this._param;
+  }
+  uploadCsv(formData: FormData): Observable<any> {
+    return this.http.post(CSV_API,
+      formData,
+      {
+        headers: new HttpHeaders({
+          'Authorization': 'Bearer ' + this.tokenStorageService.getToken()
+        })
+      })
+      ;
+  }
+
 }

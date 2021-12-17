@@ -127,30 +127,30 @@ export class HomeComponent implements OnInit {
   onViewDetailsClicked(label) {
     switch (label) {
       case "FullStack": {
-        this.dataService.changeParam(FULLSTACKS);
+        this.dataService.param=FULLSTACKS;
         break;
       }
       case "Testing": {
-        this.dataService.changeParam(TESTING);
+        this.dataService.param=TESTING;
         break;
       }
       case "SalesForce": {
-        this.dataService.changeParam(SALESFORCE);
+        this.dataService.param=SALESFORCE;
 
         break;
       }
       case "Current": {
-        this.dataService.changeParam(STATUS_CURRENT);
+        this.dataService.param=STATUS_CURRENT;
 
         break;
       }
       case "Accepted": {
-        this.dataService.changeParam(STATUS_ACCEPTED);
+        this.dataService.param=STATUS_ACCEPTED;
 
         break;
       }
       case "Rejected": {
-        this.dataService.changeParam(STATUS_REJECTED);
+        this.dataService.param=STATUS_REJECTED;
         break;
       }
     }

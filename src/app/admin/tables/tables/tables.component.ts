@@ -22,16 +22,20 @@ export class TablesComponent implements OnInit, AfterViewInit {
   dataSource: MatTableDataSource<CandidateData>;
   selection: SelectionModel<CandidateData>;
   subscription: Subscription;
+  requiredFileType: string = "text/csv";
+
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
-  constructor(private route: ActivatedRoute, private readonly dataService: DataService, private router: Router, private searchService: SearchService) { }
+  constructor(private readonly dataService: DataService, private router: Router, private searchService: SearchService) { }
 
   ngOnInit() {
-    this.searchService.onQueryReceived(this.performSearch.bind(this));
+    
+  }
 
-    this.dataService.getParam().subscribe(param =>
-      this.dataService.getCandidatesBy(param).subscribe(
+  ngAfterViewInit() {
+    this.searchService.onQueryReceived(this.performSearch.bind(this));
+      this.dataService.getCandidates().subscribe(
         data => {
           this.fillTable(data);
         },
@@ -40,10 +44,7 @@ export class TablesComponent implements OnInit, AfterViewInit {
           //this.isSignUpFailed = true;
           console.log("error");
         }
-      ));
-  }
-
-  ngAfterViewInit() {
+      );
   }
 
   applyFilter(filterValue: string) {
@@ -70,8 +71,29 @@ export class TablesComponent implements OnInit, AfterViewInit {
     this.selection = new SelectionModel<CandidateData>(true, []);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+    this.dataService.param="";
   }
   onAddCandidate() {
     this.router.navigate(['/addcandidate']);
   }
+  onFileSelected(event) {
+    const file: File = event.target.files[0];
+    console.log(file);
+
+    if (file) {
+      const formData = new FormData();
+      formData.append("file", file);
+      this.dataService.uploadCsv(formData).subscribe(
+        data => {
+          console.log(JSON.stringify(data));
+        },
+        err => {
+          //this.errorMessage = err.error.message;
+          //this.isSignUpFailed = true;
+          console.log(err);
+        }
+      );
+    }
+  }
+
 }

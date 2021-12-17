@@ -42,14 +42,6 @@
                 <input matInput type="number" min="0" placeholder="Years of experience"
                     [disabled]="!disableExpSelect.value"  [(ngModel)]="form.exp">
             </mat-form-field>
-            <mat-checkbox class="mat-checkbox" [formControl]="disableStatusSelect">Status</mat-checkbox>
-            <mat-form-field class="search">
-                <mat-select placeholder="Status" [disabled]="!disableStatusSelect.value"  [(ngModel)]="form.status">
-                    <mat-option value="ACCEPTED">Accepted</mat-option>
-                    <mat-option value="CURRENT">Current</mat-option>
-                    <mat-option value="REJECTED">Rejected</mat-option>
-                </mat-select>
-            </mat-form-field>
         </div>
         <mat-action-row>
             <button mat-button color="primary" (click)="onSearch()">Search</button>
