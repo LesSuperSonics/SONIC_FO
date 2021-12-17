@@ -7,6 +7,7 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SearchService } from 'src/app/_services/search.service';
 import { Subscription } from 'rxjs';
+import { CandidateService } from 'src/app/_services/candidate.service';
 
 const ALL = "";
 
@@ -26,7 +27,7 @@ export class TablesComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
-  constructor(private readonly dataService: DataService, private router: Router, private searchService: SearchService) { }
+  constructor(private readonly dataService: DataService,private candidataService:CandidateService, private router: Router, private searchService: SearchService) { }
 
   ngOnInit() {
     
@@ -101,4 +102,37 @@ export class TablesComponent implements OnInit, AfterViewInit {
     window.location.reload();
   }
 
+  ChangeStatusToAccepted(RowId:number){
+    this.candidataService.UpdateStatusOfCandidate(RowId,"ACCEPTED").subscribe(
+      res => {
+        console.log(res);
+      },
+      err => {
+        console.log("error");
+      }
+    );
+  }
+
+  ChangeStatusToCurrent(RowId:number){
+    this.candidataService.UpdateStatusOfCandidate(RowId,"CURRENT").subscribe(
+      res => {
+        console.log(res);
+      },
+      err => {
+        console.log("error");
+      }
+    );
+  }
+
+  ChangeStatusToRejected(RowId:number){
+    this.candidataService.UpdateStatusOfCandidate(RowId,"REJECTED").subscribe(
+      res => {
+        console.log(res);
+      },
+      err => {
+        console.log("error");
+      }
+    );
+  }
+ 
 }

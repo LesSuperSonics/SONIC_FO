@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Candidate } from '../models/candidate';
@@ -12,6 +13,8 @@ import { TokenStorageService } from './token-storage.service';
   providedIn: 'root'
 })
 export class CandidateService {
+  postId: any;
+  errorMessage: any;
 
   constructor(private http : HttpClient,  private tokenStorageService: TokenStorageService) { }
 
@@ -49,8 +52,10 @@ export class CandidateService {
 
 
   }
-  
-
+UpdateStatusOfCandidate(id,newStatus): Observable<any>{
+  const body = { status:newStatus };
+    return this.http.put(`${environment.apiUrl}/candidates/candidate/changeStatus/` + id, body,this.httpOptions);
+      }
 // profiles
 
   getFullStack(){
