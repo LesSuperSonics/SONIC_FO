@@ -107,6 +107,8 @@ export class TablesComponent implements OnInit, AfterViewInit {
     this.candidataService.UpdateStatusOfCandidate(RowId,"ACCEPTED").subscribe(
       res => {
         console.log(res);
+        this.refreshTheData();
+        
       },
       err => {
         console.log("error");
@@ -118,6 +120,7 @@ export class TablesComponent implements OnInit, AfterViewInit {
     this.candidataService.UpdateStatusOfCandidate(RowId,"CURRENT").subscribe(
       res => {
         console.log(res);
+        this.refreshTheData();
       },
       err => {
         console.log("error");
@@ -129,6 +132,7 @@ export class TablesComponent implements OnInit, AfterViewInit {
     this.candidataService.UpdateStatusOfCandidate(RowId,"REJECTED").subscribe(
       res => {
         console.log(res);
+        this.refreshTheData();
       },
       err => {
         console.log("error");
@@ -136,4 +140,11 @@ export class TablesComponent implements OnInit, AfterViewInit {
     );
   }
 
+refreshTheData(){
+  this.router.navigateByUrl('/dashboard', { skipLocationChange: true }).then(() => {
+    this.router.navigate(['tables']);
+});
 }
+
+}
+
