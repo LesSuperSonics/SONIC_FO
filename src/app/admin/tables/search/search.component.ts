@@ -1,50 +1,61 @@
-import {  Component, ElementRef, OnInit, QueryList, ViewChildren } from "@angular/core";
-import { MatCheckboxChange } from "@angular/material/checkbox";
+
+import { query } from "@angular/animations";
+import { Component, OnInit } from "@angular/core";
+import { EmailValidator, FormControl } from "@angular/forms";
+import { SearchService } from "src/app/_services/search.service";
+import { TokenStorageService } from "src/app/_services/token-storage.service";
 
 declare function disable(): any;
 declare function enable(): any;
 @Component({
-    selector: 'app-search',
-    templateUrl: './search.component.html',
-    styleUrls: ['./search.component.scss']
-  })
- 
-  export class SearchComponent implements OnInit {
-    constructor() {}
-    arr1 = ["First Name","Last Name","Profile","CIN","Passeport ID","Email","Phone Number"];
-    arr2: any= [];
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss']
+})
+export class SearchComponent implements OnInit {
+  form: any = {
+    firstName: null,
+    lastName: null,
+    email: null,
+    phoneNumber: null,
+    exp: null,
+    status: null
+  };
+  disableFirstNameSelect = new FormControl(false);
+  disableLastNameSelect = new FormControl(false);
+  disablePhoneNumberSelect = new FormControl(false);
+  disableEmailSelect = new FormControl(false);
+  disableExpSelect = new FormControl(false);
+  disableStatusSelect = new FormControl(false);
 
-    @ViewChildren('someInput') someInput: QueryList<ElementRef>;
+  constructor(private searchService: SearchService) { }
 
-    ngOnInit() {
-    }
-
-    onChange(ob: MatCheckboxChange) {
-      console.log("is checked "+ob.source.id +" "+ob.checked);
-    }
-
-    
-    onCheckboxChecked(event: { disabled: any,checked: any; }, element: any) {
-      if (event.checked) {
-        this.arr2.push(element);
-      } else {
-        let index = this.arr2.indexOf(element);
-        if (index > -1) {
-          this.arr2.splice(index, 1);
-        }
-      }
-      console.log(JSON.stringify(this.arr2));
-      if (this.arr2.includes('First Name') && this.arr2.includes('Last Name')) {
-        disable();
-        enable();
-      }
-    }
-
-    
-
-    
-    
+  ngOnInit() {
   }
 
-
-  
+  onSearch() {
+    this.searchService.sendQueryToTable(this.getQuery());
+  }
+  getQuery(): string {
+    var query = "";
+    if (this.disableFirstNameSelect.value && !(this.form.firstName == null) && !(this.form.firstName == "")) {
+      query += "firstName:" + this.form.firstName + " AND ";
+    }
+    if (this.disableLastNameSelect.value && !(this.form.lastName == null) && !(this.form.lastName == "")) {
+      query += "lastName:" + this.form.lastName + " AND ";
+    }
+    if (this.disableEmailSelect.value && !(this.form.email == null) && !(this.form.email == "")) {
+      query += "email:" + this.form.email + " AND ";
+    }
+    if (this.disablePhoneNumberSelect.value && !(this.form.phoneNumber == null) && !(this.form.phoneNumber == "")) {
+      query += "phoneNumber:" + this.form.phoneNumber + " AND ";
+    }
+    if (this.disableExpSelect.value && !(this.form.exp == null)) {
+      query += "expDuration:" + this.form.exp + " AND ";
+    }
+    /*if (this.disableStatusSelect.value && !(this.form.status == null)) {
+      query+="status:"+this.form.status+" AND ";
+    }*/ // enum issue
+    return query;
+  }
+}

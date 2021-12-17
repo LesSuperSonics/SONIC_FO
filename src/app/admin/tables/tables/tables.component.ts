@@ -2,9 +2,14 @@ import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { UserData, DataService } from '../data.service';
+import { CandidateData, DataService } from 'src/app/_services/data.service';
 import { SelectionModel } from '@angular/cdk/collections';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { SearchService } from 'src/app/_services/search.service';
+import { Subscription } from 'rxjs';
+
+
+const ALL = "";
 
 @Component({
   selector: 'app-tables',
@@ -12,22 +17,33 @@ import { Router } from '@angular/router';
   styleUrls: ['./tables.component.scss']
 })
 export class TablesComponent implements OnInit, AfterViewInit {
-  displayedColumns = ['id', 'First Name', 'Last Name', 'Status'];
-  dataSource: MatTableDataSource<UserData>;
-  selection: SelectionModel<UserData>;
+
+  displayedColumns = ['cin', 'firstName', 'lastName', 'email', 'phoneNumber', 'expDuration', 'profile', 'status'];
+  dataSource: MatTableDataSource<CandidateData>;
+  selection: SelectionModel<CandidateData>;
+  subscription: Subscription;
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
-  constructor(private readonly dataService: DataService,private router: Router) {}
+  constructor(private route: ActivatedRoute, private readonly dataService: DataService, private router: Router, private searchService: SearchService) { }
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource(this.dataService.create100Users());
-    this.selection = new SelectionModel<UserData>(true, []);
+    this.searchService.onQueryReceived(this.performSearch.bind(this));
+
+    this.dataService.getParam().subscribe(param =>
+      this.dataService.getCandidatesBy(param).subscribe(
+        data => {
+          this.fillTable(data);
+        },
+        err => {
+          //this.errorMessage = err.error.message;
+          //this.isSignUpFailed = true;
+          console.log("error");
+        }
+      ));
   }
 
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
   }
 
   applyFilter(filterValue: string) {
@@ -37,23 +53,25 @@ export class TablesComponent implements OnInit, AfterViewInit {
     }
   }
 
-  /** Whether the number of selected elements matches the total number of rows. */
-  
-  isAllSelected() {
-    const numSelected = this.selection.selected.length;
-    const numRows = this.dataSource.data.length;
-    return numSelected === numRows;
+  performSearch(query: string) {
+    this.searchService.search(query).subscribe(
+      data => {
+        this.fillTable(data);
+      },
+      err => {
+        //this.errorMessage = err.error.message;
+        //this.isSignUpFailed = true;
+        console.log("error");
+      }
+    );
   }
-
-  /** Selects all rows if they are not all selected; otherwise clear selection. */
-  masterToggle() {
-    this.isAllSelected()
-      ? this.selection.clear()
-      : this.dataSource.data.forEach(row => this.selection.select(row));
+  fillTable(data: any) {
+    this.dataSource = new MatTableDataSource(data);
+    this.selection = new SelectionModel<CandidateData>(true, []);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
- 
-
-  onAddCandidate(){
+  onAddCandidate() {
     this.router.navigate(['/addcandidate']);
   }
 }
