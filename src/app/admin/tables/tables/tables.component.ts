@@ -8,6 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { SearchService } from 'src/app/_services/search.service';
 import { Subscription } from 'rxjs';
 import { CandidateService } from 'src/app/_services/candidate.service';
+import { ToastrService } from 'ngx-toastr';
 
 const ALL = "";
 
@@ -27,7 +28,7 @@ export class TablesComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
-  constructor(private readonly dataService: DataService,private candidataService: CandidateService, private router: Router, private searchService: SearchService) { }
+  constructor(private toastr : ToastrService,private readonly dataService: DataService,private candidataService: CandidateService, private router: Router, private searchService: SearchService) { }
 
   ngOnInit() {
     
@@ -86,6 +87,14 @@ export class TablesComponent implements OnInit, AfterViewInit {
       this.dataService.uploadCsv(formData).subscribe(
         data => {
           console.log(JSON.stringify(data));
+          this.toastr.info(
+            `Upload`,
+            'CSV Uplaoded successfully !',
+            {
+              timeOut: 3000,
+              positionClass: 'toast-bottom-left'
+            }
+          )
           this.router.navigateByUrl('/dashboard', { skipLocationChange: true }).then(() => {
             this.router.navigate(['tables']);
         });
@@ -93,6 +102,14 @@ export class TablesComponent implements OnInit, AfterViewInit {
         err => {
           //this.errorMessage = err.error.message;
           //this.isSignUpFailed = true;
+          this.toastr.error(
+            `Upload`,
+            'CSV not uploaded something went wrong !',
+            {
+              timeOut: 3000,
+              positionClass: 'toast-bottom-left'
+            }
+          )
           console.log(err);
         }
       );
