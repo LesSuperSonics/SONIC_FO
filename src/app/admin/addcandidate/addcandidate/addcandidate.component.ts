@@ -100,8 +100,8 @@ export class AddCandidateComponent implements OnInit {
     },
     err=>{
       this.toastr.error(
-        `Erreur`,
-        'Merci de Vérifier la console',
+        `Error`,
+        'something went wrong !',
         {
           timeOut: 3000,
           positionClass: 'toast-bottom-left'
