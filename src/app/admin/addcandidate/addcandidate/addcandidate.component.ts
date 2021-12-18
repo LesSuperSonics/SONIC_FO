@@ -11,13 +11,12 @@ import {
 import { ErrorStateMatcher } from '@angular/material/core';
 import { Candidate } from 'src/app/models/candidate';
 import { CandidateService } from 'src/app/_services/candidate.service';
-import { COMMA, ENTER } from '@angular/cdk/keycodes';
-import { MatChipInputEvent } from '@angular/material/chips';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+
 
 
 /** Error when invalid control is dirty, touched, or submitted. */
-
 class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(
     control: FormControl | null,
@@ -32,17 +31,6 @@ class MyErrorStateMatcher implements ErrorStateMatcher {
   }
 }
 
-/** Error when invalid control is dirty, touched, or submitted. */
-/*
-export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    const isSubmitted = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-  }
-}
-*/
-
-
 @Component({
   selector: 'app-addcandidate',
   templateUrl: './addcandidate.component.html',
@@ -50,8 +38,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class AddCandidateComponent implements OnInit {
 
-  constructor(private datePipe : DatePipe, private router: Router, private candidatService : CandidateService,  private formBuilder : FormBuilder) {}
-
+ 
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email
@@ -63,6 +50,7 @@ export class AddCandidateComponent implements OnInit {
 
   matcher = new MyErrorStateMatcher();
 
+  constructor( private toastr : ToastrService, private datePipe : DatePipe, private router: Router, private candidatService : CandidateService,  private formBuilder : FormBuilder) {}
 
   candidateForm !: FormGroup;
   candidate : Candidate = new Candidate();
@@ -73,8 +61,8 @@ export class AddCandidateComponent implements OnInit {
     passportId : [''],
     firstName: [''],
     lastName: [''],
-    phoneNumber: [''],
-    email: [''],
+    phoneNumber: this.phoneFormControl,
+    email: this.emailFormControl,
     address: [''],
     expDuration: null,
     profile: [''],
@@ -100,11 +88,25 @@ export class AddCandidateComponent implements OnInit {
     this.candidatService.addCandidate(this.candidate)
     .subscribe((res : Candidate) => {
       console.log(res);
-      alert("candidate added successfuly");
+      this.toastr.success(
+        `the Candidate has a current status`,
+          'Candidate added successfuly',
+        {
+          timeOut : 3000,
+          positionClass: 'toast-bottom-left'
+        }
+      );
       this.router.navigate(['/tables']);
     },
     err=>{
-      alert("something went wrong")
+      this.toastr.error(
+        `Erreur`,
+        'Merci de Vérifier la console',
+        {
+          timeOut: 3000,
+          positionClass: 'toast-bottom-left'
+        }
+      )
     })
   }
 
@@ -114,100 +116,8 @@ export class AddCandidateComponent implements OnInit {
       day = ("0" + date.getDate()).slice(-2);
     return [day, mnth,date.getFullYear()].join("/");
   }
-  /*
-  constructor(private candidatService : CandidateService) {}
-   candidates : Candidate[];
-
-   ngOnInit(): void {}
-  
-   persistCandidate(data: Candidate) {
-    this.candidatService.addCandidate(data)
-        .subscribe((res: Candidate) => this.candidates = [res, ...this.candidates])
-  }
-
-  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
-  matcher = new MyErrorStateMatcher();
-
-*/
-
-  
-  /*
-  emailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email
-  ]);
-  phoneFormControl = new FormControl('', [
-    Validators.required,
-    Validators.pattern('[- +()0-9]+')
-    ]);
-
-  matcher = new MyErrorStateMatcher();
-
-  constructor(private candidatService : CandidateService, private formBuilder : FormBuilder) {}
-
-  candidateForm !: FormGroup;
-  candidate : Candidate = new Candidate();
-
-  ngOnInit() : void {
-   this.candidateForm = this.formBuilder.group({
-    cin : [''],
-    passportId : [''],
-    firstName: [''],
-    lastName: [''],
-    phoneNumber: [''],
-    email: [''],
-    address: [''],
-    expDuration: null,
-    profile: [''],
-    receivedDate : null
-    
-   })
-  }
-
-   */
-  
-  //candidates : Candidate[];
  
-
-
-/*
-  persistCandidate(){
-
-    this.candidate.cin = this.candidateForm.value.cin;
-    this.candidate.passportId = this.candidateForm.value.passportId;
-    this.candidate.firstName = this.candidateForm.value.firstName;
-    this.candidate.lastName = this.candidateForm.value.lastName;
-    this.candidate.email = this.candidateForm.value.email;
-    this.candidate.phoneNumber = this.candidateForm.value.phoneNumber;
-    this.candidate.address = this.candidateForm.value.address;
-    this.candidate.expDuration = this.candidateForm.value.expDuration;
-    this.candidate.profile = this.candidateForm.value.profile;
-    this.candidate.receivedDate = this.candidateForm.value.receivedDate;
-
-    this.candidatService.addCandidate(this.candidate)
-    .subscribe((res : Candidate) => {
-      console.log(res);
-      alert("candidate added successfuly");
-    },
-    err=>{
-      alert("something went wrong")
-    })
-  }
-
-  */
-
-   /*
-    this.candidatService.addCandidate(this.candidatesForm)
-    .subscribe((res : Candidate) => {
-      this.candidates = [res, ...this.candidates]
-    })
-  }
-  */
-  /*
-  persistCandidate(data : Candidate){
-    this.candidatService.addCandidate(data)
-      .subscribe((res : Candidate) => this.candidates = [res, ...this.candidates])
-  }
-  */
+ 
+  
  
 }

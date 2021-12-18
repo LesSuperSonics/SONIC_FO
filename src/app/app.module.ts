@@ -13,6 +13,7 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { DatePipe } from '@angular/common';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,7 +26,8 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     FormsModule,
     ReactiveFormsModule,
     MatButtonToggleModule,
-    SharedModule
+    SharedModule,
+    ToastrModule.forRoot()
    
   ],
   providers: [authInterceptorProviders, DatePipe, {provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],

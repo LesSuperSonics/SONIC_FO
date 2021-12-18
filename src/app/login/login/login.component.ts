@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../../_services/auth.service';
 import { TokenStorageService } from '../../_services/token-storage.service';
 
@@ -29,7 +30,7 @@ export class LoginComponent implements OnInit {
     Validators.minLength(6)
   ]);
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService,private router: Router) { }
+  constructor(private toastr : ToastrService, private authService: AuthService, private tokenStorage: TokenStorageService,private router: Router) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
