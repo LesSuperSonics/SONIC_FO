@@ -57,6 +57,14 @@ export class LoginComponent implements OnInit {
         this.reloadPage();
       },
       err => {
+        this.toastr.warning(
+          `Error`,
+          'Credentials Try again !',
+          {
+            timeOut: 3000,
+            positionClass: 'toast-bottom-left'
+          }
+        )
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
       }
