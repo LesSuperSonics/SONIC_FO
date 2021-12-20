@@ -5,9 +5,9 @@
   <mat-form-field class="filterInput">
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
   </mat-form-field>
-  <button class="addCbutton" mat-raised-button color="primary" (click)="onAddCandidate()">Ajouter Candidat</button>
+  <button class="addCbutton" mat-raised-button color="primary" (click)="onAddCandidate()">Add Candidate</button>
   <input type="file" class="file-input" [accept]="requiredFileType" (change)="onFileSelected($event)" hidden #fileUpload>
-  <button class="addCbutton" mat-raised-button color="primary" (click)="fileUpload.click()">Charger CSV </button>
+  <button class="addCbutton" mat-stroked-button color="primary" (click)="fileUpload.click()">Load CSV</button>
   <table mat-table [dataSource]="dataSource" matSort class="w-100">
     <ng-container matColumnDef="cin">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> CIN </th>

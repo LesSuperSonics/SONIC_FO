@@ -27,22 +27,22 @@ const STATUS_REJECTED = "/findByStatus/REJECTED";
 export class HomeComponent implements OnInit {
 
   countFS: number = 0;
-  labelFS: string = "";
+  labelFS: string = "FullStack";
 
   countTS: number = 0;
-  labelTS: string = "";
+  labelTS: string = "Testing";
 
   countSF: number = 0;
-  labelSF: string = "";
+  labelSF: string = "SalesForce";
 
   countCR: number = 0;
-  labelCR: string = "";
+  labelCR: string = "Current";
 
   countAC: number = 0;
-  labelAC: string = "";
+  labelAC: string = "Accepted";
 
   countRJ: number = 0;
-  labelRJ: string = "";
+  labelRJ: string = "Rejected";
 
   places: Array<Place> = [];
   content?: string;
@@ -61,8 +61,7 @@ export class HomeComponent implements OnInit {
   getFullStack() {
     this.candidateService.getFullStack().subscribe(
       res => {
-        this.labelFS = "FullStack",
-          this.countFS = JSON.parse(JSON.stringify(res))['Total_FullStack']
+        this.countFS = JSON.parse(JSON.stringify(res))['Total_FullStack']
         //console.log(this.label + this.count)
       });
   }
@@ -70,8 +69,7 @@ export class HomeComponent implements OnInit {
   getTesting() {
     this.candidateService.getTesting().subscribe(
       res => {
-        this.labelTS = "Testing",
-          this.countTS = JSON.parse(JSON.stringify(res))['Total_Testing']
+        this.countTS = JSON.parse(JSON.stringify(res))['Total_Testing']
 
       });
   }
@@ -79,8 +77,7 @@ export class HomeComponent implements OnInit {
   getSalesForce() {
     this.candidateService.getSaleForce().subscribe(
       res => {
-        this.labelSF = "SalesForce",
-          this.countSF = JSON.parse(JSON.stringify(res))['Total_SalesForce']
+        this.countSF = JSON.parse(JSON.stringify(res))['Total_SalesForce']
 
       });
   }
@@ -88,8 +85,7 @@ export class HomeComponent implements OnInit {
   getCurrent() {
     this.candidateService.getCurrent().subscribe(
       res => {
-        this.labelCR = "Current",
-          this.countCR = JSON.parse(JSON.stringify(res))['Total_Current']
+        this.countCR = JSON.parse(JSON.stringify(res))['Total_Current']
       });
 
   }
@@ -98,8 +94,7 @@ export class HomeComponent implements OnInit {
   getAccepted() {
     this.candidateService.getAccepted().subscribe(
       res => {
-        this.labelAC = "Accepted",
-          this.countAC = JSON.parse(JSON.stringify(res))['Total_Accepted']
+        this.countAC = JSON.parse(JSON.stringify(res))['Total_Accepted']
       });
 
   }
@@ -107,8 +102,7 @@ export class HomeComponent implements OnInit {
   getRejected() {
     this.candidateService.getRejected().subscribe(
       res => {
-        this.labelRJ = "Rejected",
-          this.countRJ = JSON.parse(JSON.stringify(res))['Total_Rejected']
+        this.countRJ = JSON.parse(JSON.stringify(res))['Total_Rejected']
       });
 
   }
@@ -127,30 +121,30 @@ export class HomeComponent implements OnInit {
   onViewDetailsClicked(label) {
     switch (label) {
       case "FullStack": {
-        this.dataService.param=FULLSTACKS;
+        this.dataService.param = FULLSTACKS;
         break;
       }
       case "Testing": {
-        this.dataService.param=TESTING;
+        this.dataService.param = TESTING;
         break;
       }
       case "SalesForce": {
-        this.dataService.param=SALESFORCE;
+        this.dataService.param = SALESFORCE;
 
         break;
       }
       case "Current": {
-        this.dataService.param=STATUS_CURRENT;
+        this.dataService.param = STATUS_CURRENT;
 
         break;
       }
       case "Accepted": {
-        this.dataService.param=STATUS_ACCEPTED;
+        this.dataService.param = STATUS_ACCEPTED;
 
         break;
       }
       case "Rejected": {
-        this.dataService.param=STATUS_REJECTED;
+        this.dataService.param = STATUS_REJECTED;
         break;
       }
     }

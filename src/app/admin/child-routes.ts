@@ -19,7 +19,7 @@ export const childRoutes = [
   },
   {
     path: 'forms',
-    loadChildren: () => import('./forms/forms.module').then(m => m.FormsModule),
+    loadChildren: () => import('./help/help.module').then(m => m.HelpModule),
     data: { icon: 'contact_support', text: 'Help' }
   }
 ];
