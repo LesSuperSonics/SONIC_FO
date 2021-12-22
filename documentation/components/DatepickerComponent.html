@@ -1,0 +1,906 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>SONIC documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">SONIC documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  DatepickerComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/admin/forms/datepicker/datepicker.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-datepicker</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./datepicker.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./datepicker.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#date" >date</a>
+                            </li>
+                            <li>
+                                <a href="#maxDate" >maxDate</a>
+                            </li>
+                            <li>
+                                <a href="#minDate" >minDate</a>
+                            </li>
+                            <li>
+                                <a href="#startDate" >startDate</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#chosenMonthHandler" >chosenMonthHandler</a>
+                            </li>
+                            <li>
+                                <a href="#chosenYearHandler" >chosenYearHandler</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getDateFromString" >getDateFromString</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getMonthYearString" >getMonthYearString</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/admin/forms/datepicker/datepicker.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="chosenMonthHandler"></a>
+                    <span class="name">
+                        <span ><b>chosenMonthHandler</b></span>
+                        <a href="#chosenMonthHandler"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>chosenMonthHandler(normlizedMonth: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>, datepicker: MatDatepicker<Date>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/admin/forms/datepicker/datepicker.component.ts:29</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>normlizedMonth</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>datepicker</td>
+                                    <td>
+                                            <code>MatDatepicker&lt;Date&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="chosenYearHandler"></a>
+                    <span class="name">
+                        <span ><b>chosenYearHandler</b></span>
+                        <a href="#chosenYearHandler"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>chosenYearHandler(normalizedYear: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/admin/forms/datepicker/datepicker.component.ts:23</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>normalizedYear</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDateFromString"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>getDateFromString</b></span>
+                        <a href="#getDateFromString"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getDateFromString(s: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/admin/forms/datepicker/datepicker.component.ts:39</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>s</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getMonthYearString"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>getMonthYearString</b></span>
+                        <a href="#getMonthYearString"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getMonthYearString(date: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/admin/forms/datepicker/datepicker.component.ts:36</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>date</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="17"
+                            class="link-to-prism">src/app/admin/forms/datepicker/datepicker.component.ts:17</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="date"></a>
+                    <span class="name">
+                        <span ><b>date</b></span>
+                        <a href="#date"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormControl(this.getMonthYearString(new Date()))</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/admin/forms/datepicker/datepicker.component.ts:12</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="maxDate"></a>
+                    <span class="name">
+                        <span ><b>maxDate</b></span>
+                        <a href="#maxDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Date()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/admin/forms/datepicker/datepicker.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="minDate"></a>
+                    <span class="name">
+                        <span ><b>minDate</b></span>
+                        <a href="#minDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Date()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/admin/forms/datepicker/datepicker.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startDate"></a>
+                    <span class="name">
+                        <span ><b>startDate</b></span>
+                        <a href="#startDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Date(1990, 0, 1)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/admin/forms/datepicker/datepicker.component.ts:11</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { FormControl } from &#x27;@angular/forms&#x27;;
+import { MatDatepicker } from &#x27;@angular/material/datepicker&#x27;;
+
+@Component({
+  selector: &#x27;app-datepicker&#x27;,
+  templateUrl: &#x27;./datepicker.component.html&#x27;,
+  styleUrls: [&#x27;./datepicker.component.scss&#x27;]
+})
+export class DatepickerComponent implements OnInit {
+  startDate &#x3D; new Date(1990, 0, 1);
+  date &#x3D; new FormControl(this.getMonthYearString(new Date()));
+  minDate &#x3D; new Date();
+  maxDate &#x3D; new Date();
+  constructor() {}
+
+  ngOnInit() {
+    const today &#x3D; new Date();
+    this.minDate.setDate(today.getDate() - 1);
+    this.maxDate.setDate(today.getDate() + 6);
+  }
+
+  chosenYearHandler(normalizedYear: Date) {
+    const ctrlValue &#x3D; this.getDateFromString(this.date.value);
+    ctrlValue.setFullYear(normalizedYear.getFullYear());
+    this.date.setValue(this.getMonthYearString(ctrlValue));
+  }
+
+  chosenMonthHandler(normlizedMonth: Date, datepicker: MatDatepicker&lt;Date&gt;) {
+    const ctrlValue &#x3D; this.getDateFromString(this.date.value);
+    ctrlValue.setMonth(normlizedMonth.getMonth());
+    this.date.setValue(this.getMonthYearString(ctrlValue));
+    datepicker.close();
+  }
+
+  private getMonthYearString(date: Date): string {
+    return &#x60;${date.getMonth() + 1}/${date.getFullYear()}&#x60;;
+  }
+  private getDateFromString(s: string): Date {
+    if ((s.match(/\//g) || []).length !&#x3D;&#x3D; 1) {
+      return new Date();
+    }
+    if (isNaN(+s.replace(&#x27;/&#x27;, &#x27;&#x27;))) {
+      return new Date();
+    }
+    const [mm, yyyy] &#x3D; s.split(&#x27;/&#x27;);
+    return new Date(+yyyy, +mm + 1, 1);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div fxLayout&#x3D;&quot;row wrap&quot; fxLayout.lt-sm&#x3D;&quot;column&quot; fxLayoutAlign&#x3D;&quot;space-around stretch&quot;&gt;
+  &lt;mat-card fxFlex.gt-xs&#x3D;&quot;40&quot; class&#x3D;&quot;mb15&quot;&gt;
+    &lt;mat-card-header&gt;
+      &lt;mat-card-title&gt;Basic datepicker&lt;/mat-card-title&gt;
+    &lt;/mat-card-header&gt;
+    &lt;mat-card-content class&#x3D;&quot;&quot;&gt;
+      &lt;mat-form-field&gt;
+        &lt;input matInput [matDatepicker]&#x3D;&quot;picker&quot; placeholder&#x3D;&quot;Choose a date&quot;&gt;
+        &lt;mat-datepicker-toggle matSuffix [for]&#x3D;&quot;picker&quot;&gt;&lt;/mat-datepicker-toggle&gt;
+        &lt;mat-datepicker #picker&gt;&lt;/mat-datepicker&gt;
+      &lt;/mat-form-field&gt;
+    &lt;/mat-card-content&gt;
+  &lt;/mat-card&gt;
+
+  &lt;mat-card fxFlex.gt-xs&#x3D;&quot;40&quot; class&#x3D;&quot;mb15&quot;&gt;
+    &lt;mat-card-header&gt;
+      &lt;mat-card-title&gt;Datepicker start date&lt;/mat-card-title&gt;
+    &lt;/mat-card-header&gt;
+    &lt;mat-card-content class&#x3D;&quot;&quot;&gt;
+      &lt;mat-form-field&gt;
+        &lt;input matInput [matDatepicker]&#x3D;&quot;picker2&quot; placeholder&#x3D;&quot;Choose a date&quot;&gt;
+        &lt;mat-datepicker-toggle matSuffix [for]&#x3D;&quot;picker2&quot;&gt;&lt;/mat-datepicker-toggle&gt;
+        &lt;mat-datepicker #picker2 startView&#x3D;&quot;year&quot; [startAt]&#x3D;&quot;startDate&quot;&gt;&lt;/mat-datepicker&gt;
+      &lt;/mat-form-field&gt;
+    &lt;/mat-card-content&gt;
+  &lt;/mat-card&gt;
+
+  &lt;mat-card fxFlex.gt-xs&#x3D;&quot;40&quot; class&#x3D;&quot;mb15&quot;&gt;
+    &lt;mat-card-header&gt;
+      &lt;mat-card-title&gt;Year and month picker&lt;/mat-card-title&gt;
+    &lt;/mat-card-header&gt;
+    &lt;mat-card-content class&#x3D;&quot;&quot;&gt;
+      &lt;mat-form-field&gt;
+        &lt;input matInput [matDatepicker]&#x3D;&quot;dp&quot; placeholder&#x3D;&quot;Month and Year&quot; [formControl]&#x3D;&quot;date&quot;&gt;
+        &lt;mat-datepicker-toggle matSuffix [for]&#x3D;&quot;dp&quot;&gt;&lt;/mat-datepicker-toggle&gt;
+        &lt;mat-datepicker #dp
+                        startView&#x3D;&quot;multi-year&quot;
+                        (yearSelected)&#x3D;&quot;chosenYearHandler($event)&quot;
+                        (monthSelected)&#x3D;&quot;chosenMonthHandler($event, dp)&quot;
+                        panelClass&#x3D;&quot;example-month-picker&quot;&gt;
+        &lt;/mat-datepicker&gt;
+      &lt;/mat-form-field&gt;
+    &lt;/mat-card-content&gt;
+    &lt;mat-card-footer&gt;&lt;p&gt;Not yet completed&lt;/p&gt;&lt;/mat-card-footer&gt;
+  &lt;/mat-card&gt;
+
+  &lt;mat-card fxFlex.gt-xs&#x3D;&quot;40&quot; class&#x3D;&quot;mb15&quot;&gt;
+    &lt;mat-card-header&gt;
+      &lt;mat-card-title&gt;Datepicker selected value&lt;/mat-card-title&gt;
+    &lt;/mat-card-header&gt;
+    &lt;mat-card-content class&#x3D;&quot;&quot;&gt;
+      &lt;app-selected-value&gt;&lt;/app-selected-value&gt;
+    &lt;/mat-card-content&gt;
+  &lt;/mat-card&gt;
+
+  &lt;mat-card fxFlex.gt-xs&#x3D;&quot;40&quot; class&#x3D;&quot;mb15&quot;&gt;
+    &lt;mat-card-header&gt;
+      &lt;mat-card-title&gt;Datepicker with min &amp; max validation&lt;/mat-card-title&gt;
+    &lt;/mat-card-header&gt;
+    &lt;mat-card-content class&#x3D;&quot;&quot;&gt;
+      &lt;mat-form-field class&#x3D;&quot;example-full-width&quot;&gt;
+        &lt;input matInput [min]&#x3D;&quot;minDate&quot; [max]&#x3D;&quot;maxDate&quot; [matDatepicker]&#x3D;&quot;pickerv&quot; placeholder&#x3D;&quot;Choose a date&quot;&gt;
+        &lt;mat-datepicker-toggle matSuffix [for]&#x3D;&quot;pickerv&quot;&gt;&lt;/mat-datepicker-toggle&gt;
+        &lt;mat-datepicker #pickerv&gt;&lt;/mat-datepicker&gt;
+      &lt;/mat-form-field&gt;
+    &lt;/mat-card-content&gt;
+  &lt;/mat-card&gt;
+
+  &lt;mat-card fxFlex.gt-xs&#x3D;&quot;40&quot; class&#x3D;&quot;mb15&quot;&gt;
+    &lt;mat-card-header&gt;
+      &lt;mat-card-title&gt;Input Disabled&lt;/mat-card-title&gt;
+    &lt;/mat-card-header&gt;
+    &lt;mat-card-content class&#x3D;&quot;&quot;&gt;
+      &lt;mat-form-field&gt;
+        &lt;input matInput [matDatepicker]&#x3D;&quot;dp3&quot; placeholder&#x3D;&quot;Choose a date&quot; readonly&#x3D;&quot;true&quot; (click)&#x3D;&quot;dp3.open()&quot;&gt;
+        &lt;mat-datepicker-toggle matSuffix [for]&#x3D;&quot;dp3&quot;&gt;&lt;/mat-datepicker-toggle&gt;
+        &lt;mat-datepicker #dp3 disabled&#x3D;&quot;false&quot;&gt;&lt;/mat-datepicker&gt;
+      &lt;/mat-form-field&gt;
+    &lt;/mat-card-content&gt;
+  &lt;/mat-card&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./datepicker.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutAlign="space-around stretch">  <mat-card fxFlex.gt-xs="40" class="mb15">    <mat-card-header>      <mat-card-title>Basic datepicker</mat-card-title>    </mat-card-header>    <mat-card-content class="">      <mat-form-field>        <input matInput [matDatepicker]="picker" placeholder="Choose a date">        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>        <mat-datepicker #picker></mat-datepicker>      </mat-form-field>    </mat-card-content>  </mat-card>  <mat-card fxFlex.gt-xs="40" class="mb15">    <mat-card-header>      <mat-card-title>Datepicker start date</mat-card-title>    </mat-card-header>    <mat-card-content class="">      <mat-form-field>        <input matInput [matDatepicker]="picker2" placeholder="Choose a date">        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>        <mat-datepicker #picker2 startView="year" [startAt]="startDate"></mat-datepicker>      </mat-form-field>    </mat-card-content>  </mat-card>  <mat-card fxFlex.gt-xs="40" class="mb15">    <mat-card-header>      <mat-card-title>Year and month picker</mat-card-title>    </mat-card-header>    <mat-card-content class="">      <mat-form-field>        <input matInput [matDatepicker]="dp" placeholder="Month and Year" [formControl]="date">        <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>        <mat-datepicker #dp                        startView="multi-year"                        (yearSelected)="chosenYearHandler($event)"                        (monthSelected)="chosenMonthHandler($event, dp)"                        panelClass="example-month-picker">        </mat-datepicker>      </mat-form-field>    </mat-card-content>    <mat-card-footer><p>Not yet completed</p></mat-card-footer>  </mat-card>  <mat-card fxFlex.gt-xs="40" class="mb15">    <mat-card-header>      <mat-card-title>Datepicker selected value</mat-card-title>    </mat-card-header>    <mat-card-content class="">      <app-selected-value></app-selected-value>    </mat-card-content>  </mat-card>  <mat-card fxFlex.gt-xs="40" class="mb15">    <mat-card-header>      <mat-card-title>Datepicker with min & max validation</mat-card-title>    </mat-card-header>    <mat-card-content class="">      <mat-form-field class="example-full-width">        <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="pickerv" placeholder="Choose a date">        <mat-datepicker-toggle matSuffix [for]="pickerv"></mat-datepicker-toggle>        <mat-datepicker #pickerv></mat-datepicker>      </mat-form-field>    </mat-card-content>  </mat-card>  <mat-card fxFlex.gt-xs="40" class="mb15">    <mat-card-header>      <mat-card-title>Input Disabled</mat-card-title>    </mat-card-header>    <mat-card-content class="">      <mat-form-field>        <input matInput [matDatepicker]="dp3" placeholder="Choose a date" readonly="true" (click)="dp3.open()">        <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>        <mat-datepicker #dp3 disabled="false"></mat-datepicker>      </mat-form-field>    </mat-card-content>  </mat-card></div></div>'
+    var COMPONENTS = [{'name': 'AddCandidateComponent', 'selector': 'app-addcandidate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AutoCompleteComponent', 'selector': 'app-auto-complete'},{'name': 'BarChartComponent', 'selector': 'app-bar-chart'},{'name': 'CheckboxComponent', 'selector': 'app-checkbox'},{'name': 'DatepickerComponent', 'selector': 'app-datepicker'},{'name': 'DonutChartComponent', 'selector': 'app-donut-chart'},{'name': 'HomeComponent', 'selector': ''},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputsComponent', 'selector': 'app-inputs'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LineChartComponent', 'selector': 'app-line-chart'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'OtherComponent', 'selector': 'app-other'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PieChartComponent', 'selector': 'app-pie-chart'},{'name': 'PolarChartComponent', 'selector': 'app-polar-chart'},{'name': 'RadarChartComponent', 'selector': 'app-radar-chart'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SelectedValueComponent', 'selector': 'app-selected-value'},{'name': 'SideNavComponent', 'selector': 'app-side-nav'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SliderComponent', 'selector': 'app-slider'},{'name': 'StatComponent', 'selector': 'app-stat'},{'name': 'StatesGroupComponent', 'selector': 'app-states-group'},{'name': 'TablesComponent', 'selector': 'app-tables'},{'name': 'TopNavComponent', 'selector': 'app-top-nav'}];
+    var DIRECTIVES = [{'name': 'RouterTab', 'selector': 'mat-tab[routerLink]'},{'name': 'RouterTabs', 'selector': '[routerTabs]'}];
+    var ACTUAL_COMPONENT = {'name': 'DatepickerComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'DatepickerComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

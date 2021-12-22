@@ -1,0 +1,9 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Candidates status rations</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [colors]="colors" [chartType]="doughnutChartType" (chartHover)="chartHovered($event)"
+      (chartClick)="chartClicked($event)"></canvas>
+  </mat-card-content>
+</mat-card>

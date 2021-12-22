@@ -1,0 +1,27 @@
+<div style="margin-top: 2%;" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-between stretch">
+  <div class="mb10" fxFlex="32" fxFlex.lt-lg="49">
+    <app-stat [bgClass]="'capBleue'" [icon]="'code'" [count]="countFS" [label]="labelFS" (viewDetails)="onViewDetailsClicked($event)"></app-stat>
+  </div>
+
+  <div class="mb10" fxFlex="32" fxFlex.lt-lg="49">
+    <app-stat [bgClass]="'capGrey'" [icon]="'bug_report'" [count]="countTS" [label]="labelTS" (viewDetails)="onViewDetailsClicked($event)"></app-stat>
+  </div>
+
+  <div class="mb10" fxFlex="32" fxFlex.lt-lg="49">
+    <app-stat [bgClass]="'capLightBleue'" [icon]="'view_list'" [count]="countSF" [label]="labelSF" (viewDetails)="onViewDetailsClicked($event)"></app-stat>
+  </div>
+</div>
+
+<div style="margin-top: 5%;" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-between stretch">
+  <div class="mb10 my-6" fxFlex="32" fxFlex.lt-lg="49">
+    <app-stat [bgClass]="'success'" [icon]="'verified_user'" [count]="countAC" [label]="labelAC" (viewDetails)="onViewDetailsClicked($event)"></app-stat>
+  </div>
+
+  <div class="mb10" fxFlex="32" fxFlex.lt-lg="49">
+    <app-stat [bgClass]="'warn'" [icon]="'history'" [count]="countCR" [label]="labelCR" (viewDetails)="onViewDetailsClicked($event)"></app-stat>
+  </div>
+
+  <div class="mb10" fxFlex="32" fxFlex.lt-lg="49">
+    <app-stat [bgClass]="'red'" [icon]="'not_interested'" [count]="countRJ" [label]="labelRJ" (viewDetails)="onViewDetailsClicked($event)"></app-stat>
+  </div>
+</div>
