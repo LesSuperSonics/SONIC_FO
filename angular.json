@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-material-admin": {
+    "SONIC": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -35,7 +35,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-material-admin",
+            "outputPath": "dist/SONIC",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -96,18 +96,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-material-admin:build"
+            "browserTarget": "SONIC:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-material-admin:build:production"
+              "browserTarget": "SONIC:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-material-admin:build"
+            "browserTarget": "SONIC:build"
           }
         },
         "test": {
@@ -136,7 +136,7 @@
       }
     }
   },
-  "defaultProject": "angular-material-admin",
+  "defaultProject": "SONIC",
   "cli": {
     "analytics": "83eaf683-78a9-446c-b121-ba730cb7e592"
   }

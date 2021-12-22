@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>angular-material-admin documentation</title>
+        <title>SONIC documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">angular-material-admin documentation</a>
+            <a href="../" class="navbar-brand">SONIC documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -134,6 +134,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#emailFormControl" >emailFormControl</a>
+                            </li>
+                            <li>
                                 <a href="#errorMessage" >errorMessage</a>
                             </li>
                             <li>
@@ -144,6 +147,9 @@
                             </li>
                             <li>
                                 <a href="#isLoginFailed" >isLoginFailed</a>
+                            </li>
+                            <li>
+                                <a href="#passwordFormControl" >passwordFormControl</a>
                             </li>
                             <li>
                                 <a href="#roles" >roles</a>
@@ -190,12 +196,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, tokenStorage: <a href="../injectables/TokenStorageService.html" target="_self">TokenStorageService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(toastr: ToastrService, authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, tokenStorage: <a href="../injectables/TokenStorageService.html" target="_self">TokenStorageService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/login/login/login.component.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/login/login/login.component.ts:31</a></div>
                             </td>
                         </tr>
 
@@ -212,6 +218,18 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                                <tr>
+                                                        <td>toastr</td>
+                                                  
+                                                        <td>
+                                                                    <code>ToastrService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                                 <tr>
                                                         <td>authService</td>
                                                   
@@ -286,8 +304,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">src/app/login/login/login.component.ts:24</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/login/login/login.component.ts:35</a></div>
                 </td>
             </tr>
 
@@ -323,8 +341,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="59"
-                            class="link-to-prism">src/app/login/login/login.component.ts:59</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="78"
+                            class="link-to-prism">src/app/login/login/login.component.ts:78</a></div>
                 </td>
             </tr>
 
@@ -360,8 +378,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="33"
-                            class="link-to-prism">src/app/login/login/login.component.ts:33</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/login/login/login.component.ts:44</a></div>
                 </td>
             </tr>
 
@@ -397,8 +415,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="55"
-                            class="link-to-prism">src/app/login/login/login.component.ts:55</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="74"
+                            class="link-to-prism">src/app/login/login/login.component.ts:74</a></div>
                 </td>
             </tr>
 
@@ -424,6 +442,34 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="emailFormControl"></a>
+                    <span class="name">
+                        <span ><b>emailFormControl</b></span>
+                        <a href="#emailFormControl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormControl(&#x27;&#x27;, [
+    Validators.required,
+    Validators.email
+  ])</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/login/login/login.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="errorMessage"></a>
                     <span class="name">
                         <span ><b>errorMessage</b></span>
@@ -444,7 +490,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/login/login/login.component.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/login/login/login.component.ts:21</a></div>
                         </td>
                     </tr>
 
@@ -478,7 +524,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/login/login/login.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/login/login/login.component.ts:15</a></div>
                         </td>
                     </tr>
 
@@ -503,7 +549,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/login/login/login.component.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/login/login/login.component.ts:19</a></div>
                         </td>
                     </tr>
 
@@ -528,7 +574,35 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/login/login/login.component.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/login/login/login.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="passwordFormControl"></a>
+                    <span class="name">
+                        <span ><b>passwordFormControl</b></span>
+                        <a href="#passwordFormControl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormControl(&#x27;&#x27;, [
+    Validators.required,
+    Validators.minLength(6)
+  ])</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/login/login/login.component.ts:28</a></div>
                         </td>
                     </tr>
 
@@ -559,7 +633,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/login/login/login.component.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/login/login/login.component.ts:22</a></div>
                         </td>
                     </tr>
 
@@ -573,7 +647,9 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { FormControl, Validators } from &#x27;@angular/forms&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
+import { ToastrService } from &#x27;ngx-toastr&#x27;;
 import { AuthService } from &#x27;../../_services/auth.service&#x27;;
 import { TokenStorageService } from &#x27;../../_services/token-storage.service&#x27;;
 
@@ -593,7 +669,16 @@ export class LoginComponent implements OnInit {
   errorMessage &#x3D; &#x27;&#x27;;
   roles: string[] &#x3D; [];
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService,private router: Router) { }
+  emailFormControl &#x3D; new FormControl(&#x27;&#x27;, [
+    Validators.required,
+    Validators.email
+  ]);
+  passwordFormControl &#x3D; new FormControl(&#x27;&#x27;, [
+    Validators.required,
+    Validators.minLength(6)
+  ]);
+
+  constructor(private toastr : ToastrService, private authService: AuthService, private tokenStorage: TokenStorageService,private router: Router) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -620,6 +705,14 @@ export class LoginComponent implements OnInit {
         this.reloadPage();
       },
       err &#x3D;&gt; {
+        this.toastr.warning(
+          &#x60;Error&#x60;,
+          &#x27;Credentials Try again !&#x27;,
+          {
+            timeOut: 3000,
+            positionClass: &#x27;toast-bottom-left&#x27;
+          }
+        )
         this.errorMessage &#x3D; err.error.message;
         this.isLoginFailed &#x3D; true;
       }
@@ -640,49 +733,32 @@ export class LoginComponent implements OnInit {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;login-page&quot;&gt;
   &lt;div class&#x3D;&quot;content px20&quot;&gt;
-    &lt;form class&#x3D;&quot;login-form&quot; *ngIf&#x3D;&quot;!isLoggedIn&quot;
-    name&#x3D;&quot;form&quot;
-    (ngSubmit)&#x3D;&quot;f.form.valid &amp;&amp; onSubmit()&quot;
-    #f&#x3D;&quot;ngForm&quot;
-    novalidate&gt;
+    &lt;form class&#x3D;&quot;login-form&quot; *ngIf&#x3D;&quot;!isLoggedIn&quot; name&#x3D;&quot;form&quot; (ngSubmit)&#x3D;&quot;f.form.valid &amp;&amp; onSubmit()&quot; #f&#x3D;&quot;ngForm&quot;
+      novalidate&gt;
       &lt;div class&#x3D;&quot;text-center&quot;&gt;
         &lt;h2 class&#x3D;&quot;app-name&quot;&gt;SONIC&lt;/h2&gt;
       &lt;/div&gt;
       &lt;div fxLayout&#x3D;&quot;row&quot;&gt;
         &lt;div fxFlexFill&gt;
           &lt;mat-form-field class&#x3D;&quot;w-100&quot;&gt;
-            &lt;input matInput  type&#x3D;&quot;text&quot;
-            class&#x3D;&quot;form-control&quot;
-            name&#x3D;&quot;email&quot;
-            [(ngModel)]&#x3D;&quot;form.email&quot;
-            required
-            #email&#x3D;&quot;ngModel&quot; placeholder&#x3D;&quot;Email&quot;&gt;
-            &lt;div
-          class&#x3D;&quot;alert alert-danger&quot;
-          role&#x3D;&quot;alert&quot;
-          *ngIf&#x3D;&quot;email.errors &amp;&amp; f.submitted&quot;
-        &gt;
-          Username is required!
-        &lt;/div&gt;
+            &lt;input matInput type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; [(ngModel)]&#x3D;&quot;form.email&quot; placeholder&#x3D;&quot;Email&quot;
+              [formControl]&#x3D;&quot;emailFormControl&quot;&gt;
+            &lt;mat-error *ngIf&#x3D;&quot;emailFormControl.hasError(&#x27;email&#x27;) &amp;&amp; !emailFormControl.hasError(&#x27;required&#x27;)&quot;&gt;
+              Please enter a valid email address
+            &lt;/mat-error&gt;
+            &lt;mat-error *ngIf&#x3D;&quot;emailFormControl.hasError(&#x27;required&#x27;)&quot;&gt;
+              Email is required
+            &lt;/mat-error&gt;
           &lt;/mat-form-field&gt;
           &lt;mat-form-field class&#x3D;&quot;w-100&quot;&gt;
-            &lt;input matInput  type&#x3D;&quot;password&quot;
-            class&#x3D;&quot;form-control&quot;
-            name&#x3D;&quot;password&quot;
-            [(ngModel)]&#x3D;&quot;form.password&quot;
-            required
-            minlength&#x3D;&quot;6&quot;
-            #password&#x3D;&quot;ngModel&quot; placeholder&#x3D;&quot;Password&quot;&gt;
-            &lt;div
-          class&#x3D;&quot;alert alert-danger&quot;
-          role&#x3D;&quot;alert&quot;
-          *ngIf&#x3D;&quot;password.errors &amp;&amp; f.submitted&quot;
-        &gt;
-          &lt;div *ngIf&#x3D;&quot;password.errors.required&quot;&gt;Password is required&lt;/div&gt;
-          &lt;div *ngIf&#x3D;&quot;password.errors.minlength&quot;&gt;
-            Password must be at least 6 characters
-          &lt;/div&gt;
-        &lt;/div&gt;
+            &lt;input matInput type&#x3D;&quot;password&quot; class&#x3D;&quot;form-control&quot; [(ngModel)]&#x3D;&quot;form.password&quot; placeholder&#x3D;&quot;Password&quot;
+              [formControl]&#x3D;&quot;passwordFormControl&quot; &gt;
+            &lt;mat-error *ngIf&#x3D;&quot;passwordFormControl.hasError(&#x27;minlength&#x27;) &amp;&amp; !passwordFormControl.hasError(&#x27;required&#x27;)&quot;&gt;
+              Password must have at least 6 characters
+            &lt;/mat-error&gt;
+            &lt;mat-error *ngIf&#x3D;&quot;passwordFormControl.hasError(&#x27;required&#x27;)&quot;&gt;
+              Password is required
+            &lt;/mat-error&gt;
           &lt;/mat-form-field&gt;
         &lt;/div&gt;
       &lt;/div&gt;
@@ -692,21 +768,16 @@ export class LoginComponent implements OnInit {
           &lt;button type&#x3D;&quot;button&quot; mat-button color&#x3D;&quot;primary&quot; class&#x3D;&quot;w-100&quot; (click)&#x3D;&quot;onSignup()&quot;&gt;Sign Up&lt;/button&gt;
         &lt;/div&gt;
       &lt;/div&gt;
-      &lt;div
-          class&#x3D;&quot;alert alert-danger&quot;
-          role&#x3D;&quot;alert&quot;
-          *ngIf&#x3D;&quot;f.submitted &amp;&amp; isLoginFailed&quot;
-        &gt;
-          Login failed: {{ errorMessage }}
-        &lt;/div&gt;
+      &lt;div class&#x3D;&quot;alert alert-danger&quot; role&#x3D;&quot;alert&quot; *ngIf&#x3D;&quot;f.submitted &amp;&amp; isLoginFailed&quot;&gt;
+        Login failed: {{ errorMessage }}
+      &lt;/div&gt;
 
     &lt;/form&gt;
     &lt;div class&#x3D;&quot;alert alert-success&quot; *ngIf&#x3D;&quot;isLoggedIn&quot;&gt;
       Logged in as {{ roles }}.
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
+&lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -790,8 +861,8 @@ export class LoginComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="login-page">  <div class="content px20">    <form class="login-form" *ngIf="!isLoggedIn"    name="form"    (ngSubmit)="f.form.valid && onSubmit()"    #f="ngForm"    novalidate>      <div class="text-center">        <h2 class="app-name">SONIC</h2>      </div>      <div fxLayout="row">        <div fxFlexFill>          <mat-form-field class="w-100">            <input matInput  type="text"            class="form-control"            name="email"            [(ngModel)]="form.email"            required            #email="ngModel" placeholder="Email">            <div          class="alert alert-danger"          role="alert"          *ngIf="email.errors && f.submitted"        >          Username is required!        </div>          </mat-form-field>          <mat-form-field class="w-100">            <input matInput  type="password"            class="form-control"            name="password"            [(ngModel)]="form.password"            required            minlength="6"            #password="ngModel" placeholder="Password">            <div          class="alert alert-danger"          role="alert"          *ngIf="password.errors && f.submitted"        >          <div *ngIf="password.errors.required">Password is required</div>          <div *ngIf="password.errors.minlength">            Password must be at least 6 characters          </div>        </div>          </mat-form-field>        </div>      </div>      <div fxLayout="row">        <div fxFlexFill>          <button type="submit" mat-raised-button color="primary" class="w-100">Login</button>          <button type="button" mat-button color="primary" class="w-100" (click)="onSignup()">Sign Up</button>        </div>      </div>      <div          class="alert alert-danger"          role="alert"          *ngIf="f.submitted && isLoginFailed"        >          Login failed: {{ errorMessage }}        </div>    </form>    <div class="alert alert-success" *ngIf="isLoggedIn">      Logged in as {{ roles }}.    </div>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AddCandidateComponent', 'selector': 'app-addcandidate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AutoCompleteComponent', 'selector': 'app-auto-complete'},{'name': 'BarChartComponent', 'selector': 'app-bar-chart'},{'name': 'CheckboxComponent', 'selector': 'app-checkbox'},{'name': 'DatepickerComponent', 'selector': 'app-datepicker'},{'name': 'DonutChartComponent', 'selector': 'app-donut-chart'},{'name': 'HomeComponent', 'selector': ''},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputsComponent', 'selector': 'app-inputs'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LineChartComponent', 'selector': 'app-line-chart'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'OtherComponent', 'selector': 'app-other'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PieChartComponent', 'selector': 'app-pie-chart'},{'name': 'PolarChartComponent', 'selector': 'app-polar-chart'},{'name': 'RadarChartComponent', 'selector': 'app-radar-chart'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SelectedValueComponent', 'selector': 'app-selected-value'},{'name': 'SideNavComponent', 'selector': 'app-side-nav'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SliderComponent', 'selector': 'app-slider'},{'name': 'StatComponent', 'selector': 'app-stat'},{'name': 'StatesGroupComponent', 'selector': 'app-states-group'},{'name': 'TablesComponent', 'selector': 'app-tables'},{'name': 'TopNavComponent', 'selector': 'app-top-nav'}];
+        var COMPONENT_TEMPLATE = '<div><div class="login-page">  <div class="content px20">    <form class="login-form" *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"      novalidate>      <div class="text-center">        <h2 class="app-name">SONIC</h2>      </div>      <div fxLayout="row">        <div fxFlexFill>          <mat-form-field class="w-100">            <input matInput type="text" class="form-control" [(ngModel)]="form.email" placeholder="Email"              [formControl]="emailFormControl">            <mat-error *ngIf="emailFormControl.hasError(\'email\') && !emailFormControl.hasError(\'required\')">              Please enter a valid email address            </mat-error>            <mat-error *ngIf="emailFormControl.hasError(\'required\')">              Email is required            </mat-error>          </mat-form-field>          <mat-form-field class="w-100">            <input matInput type="password" class="form-control" [(ngModel)]="form.password" placeholder="Password"              [formControl]="passwordFormControl" >            <mat-error *ngIf="passwordFormControl.hasError(\'minlength\') && !passwordFormControl.hasError(\'required\')">              Password must have at least 6 characters            </mat-error>            <mat-error *ngIf="passwordFormControl.hasError(\'required\')">              Password is required            </mat-error>          </mat-form-field>        </div>      </div>      <div fxLayout="row">        <div fxFlexFill>          <button type="submit" mat-raised-button color="primary" class="w-100">Login</button>          <button type="button" mat-button color="primary" class="w-100" (click)="onSignup()">Sign Up</button>        </div>      </div>      <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isLoginFailed">        Login failed: {{ errorMessage }}      </div>    </form>    <div class="alert alert-success" *ngIf="isLoggedIn">      Logged in as {{ roles }}.    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AddCandidateComponent', 'selector': 'app-addcandidate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BarChartComponent', 'selector': 'app-bar-chart'},{'name': 'DonutChartComponent', 'selector': 'app-donut-chart'},{'name': 'HelpComponent', 'selector': 'app-addcandidate'},{'name': 'HomeComponent', 'selector': ''},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LineChartComponent', 'selector': 'app-line-chart'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PieChartComponent', 'selector': 'app-pie-chart'},{'name': 'PolarChartComponent', 'selector': 'app-polar-chart'},{'name': 'RadarChartComponent', 'selector': 'app-radar-chart'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SideNavComponent', 'selector': 'app-side-nav'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'StatComponent', 'selector': 'app-stat'},{'name': 'TablesComponent', 'selector': 'app-tables'},{'name': 'TopNavComponent', 'selector': 'app-top-nav'}];
     var DIRECTIVES = [{'name': 'RouterTab', 'selector': 'mat-tab[routerLink]'},{'name': 'RouterTabs', 'selector': '[routerTabs]'}];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent'};
 </script>

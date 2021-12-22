@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>angular-material-admin documentation</title>
+        <title>SONIC documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">angular-material-admin documentation</a>
+            <a href="../" class="navbar-brand">SONIC documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -171,6 +171,15 @@
                                 <a href="#applyFilter" >applyFilter</a>
                             </li>
                             <li>
+                                <a href="#ChangeStatusToAccepted" >ChangeStatusToAccepted</a>
+                            </li>
+                            <li>
+                                <a href="#ChangeStatusToCurrent" >ChangeStatusToCurrent</a>
+                            </li>
+                            <li>
+                                <a href="#ChangeStatusToRejected" >ChangeStatusToRejected</a>
+                            </li>
+                            <li>
                                 <a href="#fillTable" >fillTable</a>
                             </li>
                             <li>
@@ -187,6 +196,9 @@
                             </li>
                             <li>
                                 <a href="#performSearch" >performSearch</a>
+                            </li>
+                            <li>
+                                <a href="#refreshTheData" >refreshTheData</a>
                             </li>
                             <li>
                                 <a href="#reloadPage" >reloadPage</a>
@@ -209,12 +221,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(dataService: <a href="../injectables/DataService.html" target="_self">DataService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, searchService: <a href="../injectables/SearchService.html" target="_self">SearchService</a>)</code>
+<code>constructor(toastr: ToastrService, dataService: <a href="../injectables/DataService.html" target="_self">DataService</a>, candidataService: <a href="../injectables/CandidateService.html" target="_self">CandidateService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, searchService: <a href="../injectables/SearchService.html" target="_self">SearchService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:28</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:30</a></div>
                             </td>
                         </tr>
 
@@ -232,10 +244,34 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
+                                                        <td>toastr</td>
+                                                  
+                                                        <td>
+                                                                    <code>ToastrService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
                                                         <td>dataService</td>
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/DataService.html" target="_self" >DataService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>candidataService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CandidateService.html" target="_self" >CandidateService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -305,8 +341,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="49"
-                            class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:49</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:51</a></div>
                 </td>
             </tr>
 
@@ -358,6 +394,213 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="ChangeStatusToAccepted"></a>
+                    <span class="name">
+                        <span ><b>ChangeStatusToAccepted</b></span>
+                        <a href="#ChangeStatusToAccepted"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ChangeStatusToAccepted(RowId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="123"
+                            class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:123</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>RowId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ChangeStatusToCurrent"></a>
+                    <span class="name">
+                        <span ><b>ChangeStatusToCurrent</b></span>
+                        <a href="#ChangeStatusToCurrent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ChangeStatusToCurrent(RowId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="136"
+                            class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:136</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>RowId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ChangeStatusToRejected"></a>
+                    <span class="name">
+                        <span ><b>ChangeStatusToRejected</b></span>
+                        <a href="#ChangeStatusToRejected"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ChangeStatusToRejected(RowId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="148"
+                            class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:148</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>RowId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="fillTable"></a>
                     <span class="name">
                         <span ><b>fillTable</b></span>
@@ -374,8 +617,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="68"
-                            class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:68</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:70</a></div>
                 </td>
             </tr>
 
@@ -443,8 +686,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="35"
-                            class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:35</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:37</a></div>
                 </td>
             </tr>
 
@@ -480,8 +723,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:33</a></div>
                 </td>
             </tr>
 
@@ -517,8 +760,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="75"
-                            class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:75</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="77"
+                            class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:77</a></div>
                 </td>
             </tr>
 
@@ -554,8 +797,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="78"
-                            class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:78</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="80"
+                            class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:80</a></div>
                 </td>
             </tr>
 
@@ -619,8 +862,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="56"
-                            class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:56</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:58</a></div>
                 </td>
             </tr>
 
@@ -672,6 +915,43 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="refreshTheData"></a>
+                    <span class="name">
+                        <span ><b>refreshTheData</b></span>
+                        <a href="#refreshTheData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>refreshTheData()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="160"
+                            class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:160</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="reloadPage"></a>
                     <span class="name">
                         <span ><b>reloadPage</b></span>
@@ -688,8 +968,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="100"
-                            class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:100</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="118"
+                            class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:118</a></div>
                 </td>
             </tr>
 
@@ -730,7 +1010,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:21</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:23</a></div>
                         </td>
                     </tr>
 
@@ -761,7 +1041,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:22</a></div>
                         </td>
                     </tr>
 
@@ -796,7 +1076,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:27</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:29</a></div>
                         </td>
                     </tr>
 
@@ -827,7 +1107,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:24</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:26</a></div>
                         </td>
                     </tr>
 
@@ -853,7 +1133,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:22</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:24</a></div>
                         </td>
                     </tr>
 
@@ -888,7 +1168,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:28</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:30</a></div>
                         </td>
                     </tr>
 
@@ -914,7 +1194,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/admin/tables/tables/tables.component.ts:25</a></div>
                         </td>
                     </tr>
 
@@ -936,6 +1216,8 @@ import { SelectionModel } from &#x27;@angular/cdk/collections&#x27;;
 import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
 import { SearchService } from &#x27;src/app/_services/search.service&#x27;;
 import { Subscription } from &#x27;rxjs&#x27;;
+import { CandidateService } from &#x27;src/app/_services/candidate.service&#x27;;
+import { ToastrService } from &#x27;ngx-toastr&#x27;;
 
 const ALL &#x3D; &quot;&quot;;
 
@@ -955,7 +1237,7 @@ export class TablesComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
-  constructor(private readonly dataService: DataService, private router: Router, private searchService: SearchService) { }
+  constructor(private toastr : ToastrService,private readonly dataService: DataService,private candidataService: CandidateService, private router: Router, private searchService: SearchService) { }
 
   ngOnInit() {
     
@@ -1014,6 +1296,14 @@ export class TablesComponent implements OnInit, AfterViewInit {
       this.dataService.uploadCsv(formData).subscribe(
         data &#x3D;&gt; {
           console.log(JSON.stringify(data));
+          this.toastr.info(
+            &#x60;Upload&#x60;,
+            &#x27;CSV Uplaoded successfully !&#x27;,
+            {
+              timeOut: 3000,
+              positionClass: &#x27;toast-bottom-left&#x27;
+            }
+          )
           this.router.navigateByUrl(&#x27;/dashboard&#x27;, { skipLocationChange: true }).then(() &#x3D;&gt; {
             this.router.navigate([&#x27;tables&#x27;]);
         });
@@ -1021,6 +1311,14 @@ export class TablesComponent implements OnInit, AfterViewInit {
         err &#x3D;&gt; {
           //this.errorMessage &#x3D; err.error.message;
           //this.isSignUpFailed &#x3D; true;
+          this.toastr.error(
+            &#x60;Upload&#x60;,
+            &#x27;CSV not uploaded something went wrong !&#x27;,
+            {
+              timeOut: 3000,
+              positionClass: &#x27;toast-bottom-left&#x27;
+            }
+          )
           console.log(err);
         }
       );
@@ -1030,7 +1328,52 @@ export class TablesComponent implements OnInit, AfterViewInit {
     window.location.reload();
   }
 
+
+  ChangeStatusToAccepted(RowId:number){
+    this.candidataService.UpdateStatusOfCandidate(RowId,&quot;ACCEPTED&quot;).subscribe(
+      res &#x3D;&gt; {
+        console.log(res);
+        this.refreshTheData();
+        
+      },
+      err &#x3D;&gt; {
+        console.log(&quot;error&quot;);
+      }
+    );
+  }
+
+  ChangeStatusToCurrent(RowId:number){
+    this.candidataService.UpdateStatusOfCandidate(RowId,&quot;CURRENT&quot;).subscribe(
+      res &#x3D;&gt; {
+        console.log(res);
+        this.refreshTheData();
+      },
+      err &#x3D;&gt; {
+        console.log(&quot;error&quot;);
+      }
+    );
+  }
+
+  ChangeStatusToRejected(RowId:number){
+    this.candidataService.UpdateStatusOfCandidate(RowId,&quot;REJECTED&quot;).subscribe(
+      res &#x3D;&gt; {
+        console.log(res);
+        this.refreshTheData();
+      },
+      err &#x3D;&gt; {
+        console.log(&quot;error&quot;);
+      }
+    );
+  }
+
+refreshTheData(){
+  this.router.navigateByUrl(&#x27;/dashboard&#x27;, { skipLocationChange: true }).then(() &#x3D;&gt; {
+    this.router.navigate([&#x27;tables&#x27;]);
+});
 }
+
+}
+
 </code></pre>
     </div>
 
@@ -1042,9 +1385,9 @@ export class TablesComponent implements OnInit, AfterViewInit {
   &lt;mat-form-field class&#x3D;&quot;filterInput&quot;&gt;
     &lt;input matInput (keyup)&#x3D;&quot;applyFilter($event.target.value)&quot; placeholder&#x3D;&quot;Filter&quot;&gt;
   &lt;/mat-form-field&gt;
-  &lt;button class&#x3D;&quot;addCbutton&quot; mat-raised-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;onAddCandidate()&quot;&gt;Ajouter Candidat&lt;/button&gt;
+  &lt;button class&#x3D;&quot;addCbutton&quot; mat-raised-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;onAddCandidate()&quot;&gt;Add Candidate&lt;/button&gt;
   &lt;input type&#x3D;&quot;file&quot; class&#x3D;&quot;file-input&quot; [accept]&#x3D;&quot;requiredFileType&quot; (change)&#x3D;&quot;onFileSelected($event)&quot; hidden #fileUpload&gt;
-  &lt;button class&#x3D;&quot;addCbutton&quot; mat-raised-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;fileUpload.click()&quot;&gt;Charger CSV &lt;/button&gt;
+  &lt;button class&#x3D;&quot;addCbutton&quot; mat-stroked-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;fileUpload.click()&quot;&gt;Load CSV&lt;/button&gt;
   &lt;table mat-table [dataSource]&#x3D;&quot;dataSource&quot; matSort class&#x3D;&quot;w-100&quot;&gt;
     &lt;ng-container matColumnDef&#x3D;&quot;cin&quot;&gt;
       &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; CIN &lt;/th&gt;
@@ -1080,10 +1423,10 @@ export class TablesComponent implements OnInit, AfterViewInit {
     &lt;ng-container matColumnDef&#x3D;&quot;status&quot;&gt;
       &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt; Status &lt;/th&gt;
       &lt;td mat-cell *matCellDef&#x3D;&quot;let row&quot;&gt; 
-        &lt;mat-button-toggle-group name&#x3D;&quot;fontStyle&quot; aria-label&#x3D;&quot;Font Style&quot;&gt;
-          &lt;mat-button-toggle value&#x3D;&quot;bold&quot;&gt;A&lt;/mat-button-toggle&gt;
-          &lt;mat-button-toggle value&#x3D;&quot;italic&quot;&gt;C&lt;/mat-button-toggle&gt;
-          &lt;mat-button-toggle value&#x3D;&quot;underline&quot;&gt;R&lt;/mat-button-toggle&gt;
+        &lt;mat-button-toggle-group name&#x3D;&quot;fontStyle&quot; aria-label&#x3D;&quot;Font Style&quot; &gt;
+          &lt;mat-button-toggle [ngStyle]&#x3D;&quot;{&#x27;background-color&#x27;:row.status &#x3D;&#x3D;&#x3D; &#x27;ACCEPTED&#x27; ? &#x27;#2cb64e&#x27; : &#x27;#e1dde5&#x27; }&quot; class&#x3D;&quot;accepted&quot; value&#x3D;&quot;Accepted&quot; (click)&#x3D;&quot;ChangeStatusToAccepted(row.id)&quot;&gt;&lt;/mat-button-toggle&gt;
+          &lt;mat-button-toggle [ngStyle]&#x3D;&quot;{&#x27;background-color&#x27;:row.status &#x3D;&#x3D;&#x3D; &#x27;CURRENT&#x27; ? &#x27;#ffa726&#x27; : &#x27;#e1dde5&#x27; }&quot; class&#x3D;&quot;current&quot; value&#x3D;&quot;Current&quot; (click)&#x3D;&quot;ChangeStatusToCurrent(row.id)&quot;&gt;&lt;/mat-button-toggle&gt;
+          &lt;mat-button-toggle [ngStyle]&#x3D;&quot;{&#x27;background-color&#x27;:row.status &#x3D;&#x3D;&#x3D; &#x27;REJECTED&#x27; ? &#x27;#c03d3d&#x27; : &#x27;#e1dde5&#x27; }&quot; class&#x3D;&quot;rejected&quot; value&#x3D;&quot;Rejected&quot; (click)&#x3D;&quot;ChangeStatusToRejected(row.id)&quot;&gt;&lt;/mat-button-toggle&gt;
         &lt;/mat-button-toggle-group&gt;
       &lt;/td&gt;
     &lt;/ng-container&gt;
@@ -1118,8 +1461,8 @@ mat-button-toggle {
   border-radius: 4px;
   margin-left: 3px;
   margin-right:3px;
-  width: 30px;
-  height: 30px;
+  width: 18px;
+  height: 14px;
   font-family: &#x27;Nunito Semibold&#x27;, sans-serif;
   font-size: 14px;
   font-style: bold;
@@ -1135,10 +1478,34 @@ div.center-text {
   margin-top: -3px;
 }
 
-.mat-button-toggle-checked {
-  border: 1px solid #c5c0c7;
-  background-color: #f5d133; 
-}</code></pre>
+.accepted:hover {
+    border: 1px solid #c5c0c7;
+    background-color: #2cb64e !important;
+  }
+  
+  .current:hover {
+    border: 1px solid #c5c0c7;
+    background-color: #ffa726 !important; 
+  }
+  .rejected:hover {
+    border: 1px solid #c5c0c7;
+    background-color: #c03d3d !important; 
+  }
+
+  .accepted:checked {
+    border: 1px solid #c7c0c0;
+    background-color: #2cb64e; 
+  }
+  
+  .current:checked {
+    border: 1px solid #c5c0c7;
+    background-color: #ffa726; 
+  }
+  .rejected:checked {
+    border: 1px solid #c5c0c7;
+    background-color: #c03d3d; 
+  }
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -1166,8 +1533,8 @@ div.center-text {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><section id="sample-table" class="mat-elevation-z8 bg-white">  <div style="height: 1px;">  </div>  <app-search></app-search>  <mat-form-field class="filterInput">    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">  </mat-form-field>  <button class="addCbutton" mat-raised-button color="primary" (click)="onAddCandidate()">Ajouter Candidat</button>  <input type="file" class="file-input" [accept]="requiredFileType" (change)="onFileSelected($event)" hidden #fileUpload>  <button class="addCbutton" mat-raised-button color="primary" (click)="fileUpload.click()">Charger CSV </button>  <table mat-table [dataSource]="dataSource" matSort class="w-100">    <ng-container matColumnDef="cin">      <th mat-header-cell *matHeaderCellDef mat-sort-header> CIN </th>      <td mat-cell *matCellDef="let row"> {{row.cin}} </td>    </ng-container>    <ng-container matColumnDef="firstName">      <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>      <td mat-cell *matCellDef="let row"> {{row.firstName}} </td>    </ng-container>    <ng-container matColumnDef="lastName">      <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>      <td mat-cell *matCellDef="let row"> {{row.lastName}} </td>    </ng-container>    <ng-container matColumnDef="email">      <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>      <td mat-cell *matCellDef="let row"> {{row.email}} </td>    </ng-container>    <ng-container matColumnDef="phoneNumber">      <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone Number </th>      <td mat-cell *matCellDef="let row"> {{row.phoneNumber}} </td>    </ng-container>    <ng-container matColumnDef="expDuration">      <th mat-header-cell *matHeaderCellDef mat-sort-header> Years of experience </th>      <td mat-cell *matCellDef="let row"> {{row.expDuration}} </td>    </ng-container>    <ng-container matColumnDef="profile">      <th mat-header-cell *matHeaderCellDef mat-sort-header> Profile </th>      <td mat-cell *matCellDef="let row"> {{row.profile}} </td>    </ng-container>    <ng-container matColumnDef="status">      <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>      <td mat-cell *matCellDef="let row">         <mat-button-toggle-group name="fontStyle" aria-label="Font Style">          <mat-button-toggle value="bold">A</mat-button-toggle>          <mat-button-toggle value="italic">C</mat-button-toggle>          <mat-button-toggle value="underline">R</mat-button-toggle>        </mat-button-toggle-group>      </td>    </ng-container>    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)"></tr>  </table>  <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator></section></div>'
-    var COMPONENTS = [{'name': 'AddCandidateComponent', 'selector': 'app-addcandidate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AutoCompleteComponent', 'selector': 'app-auto-complete'},{'name': 'BarChartComponent', 'selector': 'app-bar-chart'},{'name': 'CheckboxComponent', 'selector': 'app-checkbox'},{'name': 'DatepickerComponent', 'selector': 'app-datepicker'},{'name': 'DonutChartComponent', 'selector': 'app-donut-chart'},{'name': 'HomeComponent', 'selector': ''},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputsComponent', 'selector': 'app-inputs'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LineChartComponent', 'selector': 'app-line-chart'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'OtherComponent', 'selector': 'app-other'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PieChartComponent', 'selector': 'app-pie-chart'},{'name': 'PolarChartComponent', 'selector': 'app-polar-chart'},{'name': 'RadarChartComponent', 'selector': 'app-radar-chart'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SelectedValueComponent', 'selector': 'app-selected-value'},{'name': 'SideNavComponent', 'selector': 'app-side-nav'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SliderComponent', 'selector': 'app-slider'},{'name': 'StatComponent', 'selector': 'app-stat'},{'name': 'StatesGroupComponent', 'selector': 'app-states-group'},{'name': 'TablesComponent', 'selector': 'app-tables'},{'name': 'TopNavComponent', 'selector': 'app-top-nav'}];
+        var COMPONENT_TEMPLATE = '<div><section id="sample-table" class="mat-elevation-z8 bg-white">  <div style="height: 1px;">  </div>  <app-search></app-search>  <mat-form-field class="filterInput">    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">  </mat-form-field>  <button class="addCbutton" mat-raised-button color="primary" (click)="onAddCandidate()">Add Candidate</button>  <input type="file" class="file-input" [accept]="requiredFileType" (change)="onFileSelected($event)" hidden #fileUpload>  <button class="addCbutton" mat-stroked-button color="primary" (click)="fileUpload.click()">Load CSV</button>  <table mat-table [dataSource]="dataSource" matSort class="w-100">    <ng-container matColumnDef="cin">      <th mat-header-cell *matHeaderCellDef mat-sort-header> CIN </th>      <td mat-cell *matCellDef="let row"> {{row.cin}} </td>    </ng-container>    <ng-container matColumnDef="firstName">      <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>      <td mat-cell *matCellDef="let row"> {{row.firstName}} </td>    </ng-container>    <ng-container matColumnDef="lastName">      <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>      <td mat-cell *matCellDef="let row"> {{row.lastName}} </td>    </ng-container>    <ng-container matColumnDef="email">      <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>      <td mat-cell *matCellDef="let row"> {{row.email}} </td>    </ng-container>    <ng-container matColumnDef="phoneNumber">      <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone Number </th>      <td mat-cell *matCellDef="let row"> {{row.phoneNumber}} </td>    </ng-container>    <ng-container matColumnDef="expDuration">      <th mat-header-cell *matHeaderCellDef mat-sort-header> Years of experience </th>      <td mat-cell *matCellDef="let row"> {{row.expDuration}} </td>    </ng-container>    <ng-container matColumnDef="profile">      <th mat-header-cell *matHeaderCellDef mat-sort-header> Profile </th>      <td mat-cell *matCellDef="let row"> {{row.profile}} </td>    </ng-container>    <ng-container matColumnDef="status">      <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>      <td mat-cell *matCellDef="let row">         <mat-button-toggle-group name="fontStyle" aria-label="Font Style" >          <mat-button-toggle [ngStyle]="{\'background-color\':row.status === \'ACCEPTED\' ? \'#2cb64e\' : \'#e1dde5\' }" class="accepted" value="Accepted" (click)="ChangeStatusToAccepted(row.id)"></mat-button-toggle>          <mat-button-toggle [ngStyle]="{\'background-color\':row.status === \'CURRENT\' ? \'#ffa726\' : \'#e1dde5\' }" class="current" value="Current" (click)="ChangeStatusToCurrent(row.id)"></mat-button-toggle>          <mat-button-toggle [ngStyle]="{\'background-color\':row.status === \'REJECTED\' ? \'#c03d3d\' : \'#e1dde5\' }" class="rejected" value="Rejected" (click)="ChangeStatusToRejected(row.id)"></mat-button-toggle>        </mat-button-toggle-group>      </td>    </ng-container>    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)"></tr>  </table>  <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator></section></div>'
+    var COMPONENTS = [{'name': 'AddCandidateComponent', 'selector': 'app-addcandidate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BarChartComponent', 'selector': 'app-bar-chart'},{'name': 'DonutChartComponent', 'selector': 'app-donut-chart'},{'name': 'HelpComponent', 'selector': 'app-addcandidate'},{'name': 'HomeComponent', 'selector': ''},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LineChartComponent', 'selector': 'app-line-chart'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PieChartComponent', 'selector': 'app-pie-chart'},{'name': 'PolarChartComponent', 'selector': 'app-polar-chart'},{'name': 'RadarChartComponent', 'selector': 'app-radar-chart'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SideNavComponent', 'selector': 'app-side-nav'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'StatComponent', 'selector': 'app-stat'},{'name': 'TablesComponent', 'selector': 'app-tables'},{'name': 'TopNavComponent', 'selector': 'app-top-nav'}];
     var DIRECTIVES = [{'name': 'RouterTab', 'selector': 'mat-tab[routerLink]'},{'name': 'RouterTabs', 'selector': '[routerTabs]'}];
     var ACTUAL_COMPONENT = {'name': 'TablesComponent'};
 </script>
