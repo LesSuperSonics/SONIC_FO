@@ -18,6 +18,11 @@ export interface CandidateData {
   user: string;
   receivedDate: string;
 }
+export interface StatusData {
+  id:number;
+  label:string;
+  description:string;
+}
 const GET_API = "http://localhost:8080/api/candidates";
 const CSV_API = "http://localhost:8080/api/csv/upload"
 

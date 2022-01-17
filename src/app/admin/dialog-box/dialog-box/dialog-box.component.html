@@ -1,0 +1,28 @@
+<form name="form" (ngSubmit)="f.form.valid && doAction()" #f="ngForm" novalidate>
+    <div mat-dialog-content>
+        <div *ngIf="action != 'Delete'; else elseTemplate">
+            <mat-form-field>
+                <input placeholder="Status label" matInput [(ngModel)]="local_data.label"
+                    [formControl]="labelFormControl">
+                <mat-error *ngIf="labelFormControl.hasError('required')">
+                    Status label is required
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input placeholder="Status description" matInput [(ngModel)]="local_data.description"
+                    [formControl]="descriptionFormControl">
+                <mat-error *ngIf="descriptionFormControl.hasError('required')">
+                    Status description is required
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <ng-template #elseTemplate>
+            Sure to delete <b>{{local_data.label}}</b>?
+            <br>{{local_data.count}} candidates have this status.
+        </ng-template>
+    </div>
+    <div mat-dialog-actions>
+        <button type="submit" mat-button>{{action}}</button>
+        <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+    </div>
+</form>

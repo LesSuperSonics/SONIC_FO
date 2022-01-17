@@ -19,6 +19,11 @@ const routes: Route[] = [
         path: 'addcandidate',
         loadChildren: () => import('./addcandidate/addcandidate.module').then(m => m.AddCandidateModule)
       },
+      {
+        path: '',
+        loadChildren: () =>
+          import('./dialog-box/dialog-box.module').then(m => m.DialogBoxModule)
+      },
       ...childRoutes
     ]
   }
@@ -28,4 +33,4 @@ const routes: Route[] = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AdminRoutingModule {}
+export class AdminRoutingModule { }

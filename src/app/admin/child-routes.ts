@@ -18,8 +18,13 @@ export const childRoutes = [
     data: { icon: 'bar_chart', text: 'Charts' }
   },
   {
-    path: 'forms',
+    path: 'help',
     loadChildren: () => import('./help/help.module').then(m => m.HelpModule),
     data: { icon: 'contact_support', text: 'Help' }
+  },
+  {
+    path: 'statuses',
+    loadChildren: () => import('./status/status.module').then(m => m.StatusModule),
+    data: { icon: 'directions', text: 'Statuses' }
   }
 ];
