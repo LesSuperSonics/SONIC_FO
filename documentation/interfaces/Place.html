@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>angular-material-admin documentation</title>
+        <title>SONIC documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">angular-material-admin documentation</a>
+            <a href="../" class="navbar-brand">SONIC documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -322,22 +322,22 @@ const STATUS_REJECTED &#x3D; &quot;/findByStatus/REJECTED&quot;;
 export class HomeComponent implements OnInit {
 
   countFS: number &#x3D; 0;
-  labelFS: string &#x3D; &quot;&quot;;
+  labelFS: string &#x3D; &quot;FullStack&quot;;
 
   countTS: number &#x3D; 0;
-  labelTS: string &#x3D; &quot;&quot;;
+  labelTS: string &#x3D; &quot;Testing&quot;;
 
   countSF: number &#x3D; 0;
-  labelSF: string &#x3D; &quot;&quot;;
+  labelSF: string &#x3D; &quot;SalesForce&quot;;
 
   countCR: number &#x3D; 0;
-  labelCR: string &#x3D; &quot;&quot;;
+  labelCR: string &#x3D; &quot;Current&quot;;
 
   countAC: number &#x3D; 0;
-  labelAC: string &#x3D; &quot;&quot;;
+  labelAC: string &#x3D; &quot;Accepted&quot;;
 
   countRJ: number &#x3D; 0;
-  labelRJ: string &#x3D; &quot;&quot;;
+  labelRJ: string &#x3D; &quot;Rejected&quot;;
 
   places: Array&lt;Place&gt; &#x3D; [];
   content?: string;
@@ -356,8 +356,7 @@ export class HomeComponent implements OnInit {
   getFullStack() {
     this.candidateService.getFullStack().subscribe(
       res &#x3D;&gt; {
-        this.labelFS &#x3D; &quot;FullStack&quot;,
-          this.countFS &#x3D; JSON.parse(JSON.stringify(res))[&#x27;Total_FullStack&#x27;]
+        this.countFS &#x3D; JSON.parse(JSON.stringify(res))[&#x27;Total_FullStack&#x27;]
         //console.log(this.label + this.count)
       });
   }
@@ -365,8 +364,7 @@ export class HomeComponent implements OnInit {
   getTesting() {
     this.candidateService.getTesting().subscribe(
       res &#x3D;&gt; {
-        this.labelTS &#x3D; &quot;Testing&quot;,
-          this.countTS &#x3D; JSON.parse(JSON.stringify(res))[&#x27;Total_Testing&#x27;]
+        this.countTS &#x3D; JSON.parse(JSON.stringify(res))[&#x27;Total_Testing&#x27;]
 
       });
   }
@@ -374,8 +372,7 @@ export class HomeComponent implements OnInit {
   getSalesForce() {
     this.candidateService.getSaleForce().subscribe(
       res &#x3D;&gt; {
-        this.labelSF &#x3D; &quot;SalesForce&quot;,
-          this.countSF &#x3D; JSON.parse(JSON.stringify(res))[&#x27;Total_SalesForce&#x27;]
+        this.countSF &#x3D; JSON.parse(JSON.stringify(res))[&#x27;Total_SalesForce&#x27;]
 
       });
   }
@@ -383,8 +380,7 @@ export class HomeComponent implements OnInit {
   getCurrent() {
     this.candidateService.getCurrent().subscribe(
       res &#x3D;&gt; {
-        this.labelCR &#x3D; &quot;Current&quot;,
-          this.countCR &#x3D; JSON.parse(JSON.stringify(res))[&#x27;Total_Current&#x27;]
+        this.countCR &#x3D; JSON.parse(JSON.stringify(res))[&#x27;Total_Current&#x27;]
       });
 
   }
@@ -393,8 +389,7 @@ export class HomeComponent implements OnInit {
   getAccepted() {
     this.candidateService.getAccepted().subscribe(
       res &#x3D;&gt; {
-        this.labelAC &#x3D; &quot;Accepted&quot;,
-          this.countAC &#x3D; JSON.parse(JSON.stringify(res))[&#x27;Total_Accepted&#x27;]
+        this.countAC &#x3D; JSON.parse(JSON.stringify(res))[&#x27;Total_Accepted&#x27;]
       });
 
   }
@@ -402,8 +397,7 @@ export class HomeComponent implements OnInit {
   getRejected() {
     this.candidateService.getRejected().subscribe(
       res &#x3D;&gt; {
-        this.labelRJ &#x3D; &quot;Rejected&quot;,
-          this.countRJ &#x3D; JSON.parse(JSON.stringify(res))[&#x27;Total_Rejected&#x27;]
+        this.countRJ &#x3D; JSON.parse(JSON.stringify(res))[&#x27;Total_Rejected&#x27;]
       });
 
   }
@@ -422,30 +416,30 @@ export class HomeComponent implements OnInit {
   onViewDetailsClicked(label) {
     switch (label) {
       case &quot;FullStack&quot;: {
-        this.dataService.param&#x3D;FULLSTACKS;
+        this.dataService.param &#x3D; FULLSTACKS;
         break;
       }
       case &quot;Testing&quot;: {
-        this.dataService.param&#x3D;TESTING;
+        this.dataService.param &#x3D; TESTING;
         break;
       }
       case &quot;SalesForce&quot;: {
-        this.dataService.param&#x3D;SALESFORCE;
+        this.dataService.param &#x3D; SALESFORCE;
 
         break;
       }
       case &quot;Current&quot;: {
-        this.dataService.param&#x3D;STATUS_CURRENT;
+        this.dataService.param &#x3D; STATUS_CURRENT;
 
         break;
       }
       case &quot;Accepted&quot;: {
-        this.dataService.param&#x3D;STATUS_ACCEPTED;
+        this.dataService.param &#x3D; STATUS_ACCEPTED;
 
         break;
       }
       case &quot;Rejected&quot;: {
-        this.dataService.param&#x3D;STATUS_REJECTED;
+        this.dataService.param &#x3D; STATUS_REJECTED;
         break;
       }
     }
